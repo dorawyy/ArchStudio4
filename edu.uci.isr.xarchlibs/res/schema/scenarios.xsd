@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ml="http://www.ics.uci.edu/pub/arch/xArch/scenarios.xsd"
+   	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/scenarios.xsd"
+    	elementFormDefault="qualified"
+    	attributeFormDefault="unqualified"
+    	xml:lang="en">
+
+  <!-- $Id: ScenarioML.xsd,v 1.4 2005/11/12 02:34:26 thomas Exp thomas $ -->
+
+  <xs:annotation><xs:documentation>
+    The ScenarioML schema, version 1.1, 2006 Winter.
+
+    This schema is up-to-date with the ScenarioML grammar
+    as 2006Feb05Su.
+  </xs:documentation></xs:annotation>
+
+
+  <!-- Top-level elements -->
+
+  <!-- scenarioCollection is a top-level element -->
+  <xs:element name="scenarioCollection">
+    <xs:annotation><xs:documentation>
+      A scenario collection may be named, and may have any number
+      of scenarios.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title"           type="ml:TitleT"       minOccurs="0"/>
+        <xs:element name="summary"         type="ml:SummaryT"     minOccurs="0"/>
+        <xs:element name="comment"         type="ml:CommentT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element  ref="ml:ontology"                            minOccurs="0"/>
+        <xs:element  ref="ml:scenario"                            minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="ml:name" use="optional"/>
+    </xs:complexType>
+    <!-- uniques -->
+    <xs:unique name="parameter-name">
+      <xs:annotation><xs:documentation>
+        Each parameter name must be unique within its scenario.
+        This "unique" element is redundant
+        with "parameter-variable-name" in "scenario",
+        but is required by the keyref "argument" below.
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="parameter"/>
+      <xs:field    xpath="./@name"/>
+    </xs:unique>
+    <xs:unique name="scenario-name">
+      <xs:annotation><xs:documentation>
+        Scenarios need not have names, but if they do,
+        each scenario name must be unique within the scenarioCollection.
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="./scenario"/>
+      <xs:field    xpath="./@name"/>
+    </xs:unique>
+    <!-- keyrefs -->
+    <xs:keyref name="argument" refer="ml:parameter-name">
+      <xs:annotation><xs:documentation>
+        Arguments must refer only to names of parameters of the called scenario.
+        At present the called scenario must be in the same collection
+        (which is not necessarily the correct restriction).
+        I don't know how to express that all the arguments of an episode
+        must refer to parameters of the scenario named by the episode
+        (maybe it isn't possible with XMLSchema).
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="argument"/>
+      <xs:field    xpath="name"/>
+    </xs:keyref>
+  </xs:element>
+
+  <!-- scenario is a top-level element -->
+  <xs:element name="scenario">
+    <xs:annotation><xs:documentation>
+      A ScenarioML file may contain a single scenario.
+      A scenario may be named, may have parameters,
+      and may have an event.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title"           type="ml:TitleT"       minOccurs="0"/>
+        <xs:element name="summary"         type="ml:SummaryT"     minOccurs="0"/>
+        <xs:element name="comment"         type="ml:CommentT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="parameter"       type="ml:ParameterT"   minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="precondition"    type="ml:FormulaT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="postcondition"   type="ml:FormulaT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element  ref="ml:ontology"                            minOccurs="0"/>
+        <xs:group    ref="ml:EventGroup"                          minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute  ref="ml:name"                         use="optional"/>
+      <xs:attribute name="episode"  type="ml:EpisodeAttrT" use="optional"/>
+      <xs:attribute name="negative" fixed="true"        use="optional"/>
+    </xs:complexType>
+    <!-- uniques -->
+    <xs:unique name="event-name">
+      <xs:annotation><xs:documentation>
+        Events need not have names, but if they do,
+        each event name must be unique within the scenario.
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="alternation|episode|eventList|interruption|iteration|nullEvent|simpleEvent"/>
+      <xs:field    xpath="./@name"/>
+    </xs:unique>
+    <xs:unique name="parameter-variable-name">
+      <xs:annotation><xs:documentation>
+        Each parameter and variable name must be unique within the scenario.
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="parameter|variable"/>
+      <xs:field    xpath="./@name"/>
+    </xs:unique>
+    <!-- keyrefs -->
+    <xs:keyref name="constraintBetween" refer="ml:event-name">
+      <xs:annotation><xs:documentation>
+        constraintBetween elements must refer only to events in the same scenario.
+      </xs:documentation></xs:annotation>
+      <xs:selector xpath="constraintBetween"/>
+      <xs:field    xpath="@nameLf|@nameRt"/>
+    </xs:keyref>
+  </xs:element>
+
+
+  <!-- Events -->
+
+  <xs:group name="EventGroup">
+    <xs:annotation><xs:documentation>
+      This group represents a single event of any sort.
+    </xs:documentation></xs:annotation>
+    <xs:choice>
+      <xs:element name="alternation"       type="ml:AlternationT"/>
+      <xs:element name="episode"           type="ml:EpisodeT"/>
+      <xs:element name="eventChain"        type="ml:EventChainT"/>
+      <xs:element name="eventDag"          type="ml:EventDagT"/>
+      <xs:element name="eventGraph"        type="ml:EventGraphT"/>
+      <xs:element name="interruption"      type="ml:InterruptionT"/>
+      <xs:element name="iteration"         type="ml:IterationT"/>
+      <xs:element name="nullEvent"         type="ml:ForEventsT"/>
+      <xs:element name="simpleEvent"       type="ml:SimpleEventT"/>
+      <xs:element name="typedEvent"        type="ml:TypedEventT"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="AlternationT">
+    <xs:annotation><xs:documentation>
+      An alternation is a set of 0 or more alternative events.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:group   ref="ml:EventGroup"                         minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="EpisodeT">
+    <xs:annotation><xs:documentation>
+      An episode stands for the events of the named scenario to which
+      it refers, with a list of arguments with which to bind
+      the scenario's parameters.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:element name="argument"      type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="ml:ref"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="EventChainT">
+    <xs:annotation><xs:documentation>
+      An event chain is a quick way of specifying a relatively common
+      temporal situation in scenarios.  Each adjacent pair of events
+      is constrained by either by the temporalRelation element
+      between them (if any), or the Allen relation given in the chain's attribute.
+      The chain may not end with an AllenRelation element
+      (although the schema allows it).
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="ml:EventGroup"/>
+            <xs:element name="relation"    type="ml:AllenRelnPT"  minOccurs="0"/>
+          </xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="relation" type="ml:AllenRelnPT" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="EventDagT">
+    <xs:annotation><xs:documentation>
+      An event dag is a relatively simple way of specifying a
+      relatively common temporal situation in scenarios.
+      The subevents are arranged in a partial order
+      using family elements for each parent and children.
+      This is not the most general way of specifying temporal relations
+      (in general, they form a graph) but it is very convenient
+      in the situations in which it is appropriate.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="family"        type="ml:FamilyT"      minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="relation"      type="ml:AllenRelnPT" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="EventGraphT">
+    <xs:annotation><xs:documentation>
+      An event graph is a tedious but general way of specifying
+      relations among events.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:element name="constraintBetween"
+                                           type="ml:ConstraintBT" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="ml:EventGroup"/>
+            <xs:element name="relation"    type="ml:AllenRelnT"   minOccurs="0"/>
+          </xs:sequence>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="InterruptionT">
+    <xs:annotation><xs:documentation>
+      An interruption is the first-listed event,
+      possibly interrupted by the second-listed event.
+      If the second event interrupts the first,
+      the rest of the first event doesn't happen.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:group    ref="ml:EventGroup" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IterationT">
+    <xs:annotation><xs:documentation>
+      An iteration of an event.  The permissible sets of iterations
+      are given by the iterations subelement.  Successive iterations
+      have the temporal relation given by the attribute.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:group ref="ml:IterationsGroup"                      minOccurs="0"/>
+          <xs:group ref="ml:EventGroup"/>
+        </xs:sequence>
+        <xs:attribute name="relation" type="ml:AllenRelnT" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="NullEventT">
+    <xs:annotation><xs:documentation>
+      A null event represents nothing happening.
+      It can be used wherever an event is required
+      but no occurrence should be matched.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT"/>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SimpleEventT">
+    <xs:annotation><xs:documentation>
+      A simple event represents an event that can't be divided into
+      subevents.  It is simply defined by some natural language text.
+      The text may be marked up with references to parameters and
+      variables, and definitions of variables.
+      Because a simple event is of mixed content,
+      its type can't be derived from EventType;
+      no other events are of mixed content.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:element name="text"          type="ml:TextT"        minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TypedEventT">
+    <xs:annotation><xs:documentation>
+      An event defined in terms of an event type,
+      possibly with arguments replacing parameters.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:element name="type"          type="ml:TypeT"        minOccurs="0"/>
+          <xs:group ref="ml:MarkupGroup" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute  ref="ml:type" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!-- Other elements used in scenarios -->
+
+  <xs:complexType name="ArgumentT">
+    <xs:annotation><xs:documentation>
+      An argument is a value for a parameter of a scenario.
+      An episode reference to a scenario requires an argument for each
+      of the scenario's parameters.  The parameter is referred to by
+      its name, and the value is given either as the value of the
+      "value=" attribute or as the contents of the element.
+      If the value contains elements, then it must be given
+      as the contents of this element;  if the value is a string,
+      it can be either the attribute value or the element contents.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="ref"               type="ml:RefT"         minOccurs="0"/>
+      <xs:element name="text"              type="ml:TextT"        minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="parameter" type="ml:NameT" use="optional"/>
+  </xs:complexType>
+
+  <!-- Child is defined inside FamilyType -->
+
+  <xs:complexType name="CoMatchedByT">
+    <xs:annotation><xs:documentation>
+      A list of references to other events
+      all of which must co-match with the one containing this element.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="ref"               type="ml:RefT"         minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CommentT" mixed="true">
+    <xs:annotation><xs:documentation>
+      Text for human readers, without formal semantics.
+      A comment has a type and an optional name
+      (by which it can be distinguished from other comments of the same type).
+    </xs:documentation></xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="ml:MarkupGroup"/>
+    </xs:choice>
+    <xs:attribute ref="ml:name" use="optional"/>
+    <xs:attribute ref="ml:type" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="ConstraintBT">
+    <xs:annotation><xs:documentation>
+      A constraint element gives an Allen relation constraining
+      the temporal relation between two named events.
+      The relation ordering is;  nameLf relation nameRt.
+    </xs:documentation></xs:annotation>
+    <xs:attribute name="relation" type="ml:AllenRelnT"/>
+    <xs:attribute name="refLf" type="ml:NameT"/>
+    <xs:attribute name="refRt" type="ml:NameT"/>
+  </xs:complexType>
+
+  <xs:complexType name="EventRefT">
+    <xs:annotation><xs:documentation>
+      A reference to an event.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:attribute ref="ml:ref"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="FamilyT">
+    <xs:annotation><xs:documentation>
+      A family is a parent and its children in an eventDag.
+    </xs:documentation></xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ml:ForEventsT">
+        <xs:sequence>
+          <xs:group   ref="ml:EventGroup"/>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="relation"    type="ml:AllenRelnPT"  minOccurs="0"/>
+            <xs:choice>
+              <xs:group   ref="ml:EventGroup"/>
+              <xs:element name="eventRef"  type="ml:EventRefT"/>
+              <xs:element name="family"    type="ml:FamilyT"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:sequence>
+        <xs:attribute name="relation"      type="ml:AllenRelnPT" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ForEventsT">
+    <xs:annotation><xs:documentation>
+      All events have this attribute and subelements.
+      All event types are derived from this type except for
+      SimpleEventType, which is the only mixed event type and so
+      can't be derived from this unmixed type.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="summary"           type="ml:SummaryT"     minOccurs="0"/>
+      <xs:element name="comment"           type="ml:CommentT"     minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="coMatchedBy"       type="ml:CoMatchedByT" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="precondition"      type="ml:FormulaT"     minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="postcondition"     type="ml:FormulaT"     minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute  ref="ml:name" use="optional"/>
+    <xs:attribute name="negative" fixed="true" type="xs:string"      use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="IndirectT">
+    <xs:annotation><xs:documentation>
+      Makes a ref indirect.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="ref"               type="ml:RefT"/>
+    </xs:sequence>
+    <xs:attribute name="relatedAs"         type="xs:string"/>
+    <xs:attribute name="which"             type="ml:WhichT" use="optional"/>
+  </xs:complexType>
+
+  <xs:group name="IterationsGroup">
+    <xs:annotation><xs:documentation>
+      The permissible sets of iterations for an iteration.
+    </xs:documentation></xs:annotation>
+    <xs:choice>
+      <xs:element name="iterationsCounted" type="ml:IterationsCountedT"/>
+      <xs:element name="iterationsForEach" type="ml:IterationsForEachT"/>
+      <xs:element name="iterationsWhile"   type="ml:IterationsWhileT"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="IterationsCountedT">
+    <xs:annotation><xs:documentation>
+      A permissible sets of iterations for an iteration,
+      specified as a numeric range.
+    </xs:documentation></xs:annotation>
+    <xs:attribute ref="ml:min"/>
+    <xs:attribute ref="ml:max"/>
+  </xs:complexType>
+
+  <xs:complexType name="IterationsForEachT">
+    <xs:annotation><xs:documentation>
+      A permissible sets of iterations for an iteration,
+      specified as a list of items to iterate over.
+      Don't know what the list format will be.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:group ref="ml:MarkupGroup"                              minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="IterationsWhileT">
+    <xs:annotation><xs:documentation>
+      A condition to be true during an iteration.
+      Don't know what the condition format will be.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:group ref="ml:MarkupGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:group name="MarkupGroup">
+    <xs:annotation><xs:documentation>≤
+      The kinds of markup that can appear within a simpleEvent.
+    </xs:documentation></xs:annotation>
+    <xs:choice>
+      <xs:element name="ref"               type="ml:RefT"/>
+      <xs:element name="variable"          type="ml:VariableT"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="ParameterT">
+    <xs:annotation><xs:documentation>
+      A parameter of a scenario.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="type"              type="ml:TypeT"        minOccurs="0"/>
+      <xs:element name="text"              type="ml:TextT"        minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute  ref="ml:name"/>
+    <xs:attribute name="direction" use="optional" fixed="out"/>
+  </xs:complexType>
+
+  <!-- precondition uses FormulaType -->
+  <!-- postcondition uses FormulaType -->
+  <xs:complexType name="FormulaT" mixed="true">
+    <xs:annotation><xs:documentation>
+      A formula suitable for a pre- or postcondition.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:group ref="ml:MarkupGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RefT">
+    <xs:annotation><xs:documentation>
+      A reference to a parameter, variable, or
+      another entity yet to be defined.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="argument"          type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="indirect"          type="ml:IndirectT"    minOccurs="0"/>
+      <xs:element name="text"              type="ml:TextT"        minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:to"/>
+    <xs:attribute name="expand" use="optional" fixed="true"/>
+  </xs:complexType>
+
+  <!-- relation uses AllenRelnPType -->
+
+  <xs:complexType name="SummaryT" mixed="true">
+    <xs:annotation><xs:documentation>
+      A summary of a compound event.
+      The summary may be shown instead of the event,
+      when the event is not to be shown in full detail.
+    </xs:documentation></xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="ml:MarkupGroup"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="TextT" mixed="true">
+    <xs:annotation><xs:documentation>
+      An informal text description,
+      possibly with ref and variable markup.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:group ref="ml:MarkupGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TitleT" mixed="true">
+    <xs:annotation><xs:documentation>
+      A title of a scenario or collection.
+      The title may be shown to stand for the scenario or collection.
+    </xs:documentation></xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="ml:MarkupGroup"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="TypeT">
+    <xs:annotation><xs:documentation>
+      Gives the type of a typed event.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element name="ref"             type="ml:RefT"/>
+      </xs:choice>
+      <xs:element name="argument"          type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute  ref="ml:ref" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="VariableT">
+    <xs:annotation><xs:documentation>
+      An instance of a variable, declaring the name and binding a value to it.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="type"              type="ml:TypeT"         minOccurs="0"/>
+      <xs:element name="text"              type="ml:TextT"         minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:name"/>
+    <xs:attribute name="which"             type="ml:WhichT" use="optional"/>
+  </xs:complexType>
+
+
+  <!-- Ontologies -->
+
+  <!-- ontology is a top-level element -->
+  <xs:element name="ontology">
+    <xs:annotation><xs:documentation>
+      An ontology, consisting of a collection of term and type definitions.
+      The type definitions may be interrelated.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="summary"         type="ml:SummaryT"     minOccurs="0"/>
+        <xs:element name="comment"         type="ml:CommentT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="eventTypeDef"    type="ml:EventTDT"     minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="instanceTypeDef" type="ml:InstanceTDT"  minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="termDef"         type="ml:TermDefT"     minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute ref="ml:name" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="EventTDT">
+    <xs:annotation><xs:documentation>
+      A defined typedEvent type.
+      The event type's (human-readable) definition is given in
+      the contents of the element.
+      The event type may be parameterized, in which case
+      the parameters may be referenced  in the definition.
+      <!-- -->
+      The event type may be defined to be a subtype of another event type
+      by the super element.
+      If so, then any event of this type is also an event of the supertype.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="parameter"         type="ml:ParameterT"   minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="super"             type="ml:SuperT"       minOccurs="0"/>
+      <xs:group    ref="ml:EventGroup" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute  ref="ml:name"/>
+    <xs:attribute name="super" type="ml:NameT" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="InstanceT">
+    <xs:annotation><xs:documentation>
+      An instance of a type.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="argument"          type="ml:ArgumentT"     minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="text"              type="ml:TextT"         minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:name"/>
+  </xs:complexType>
+
+  <xs:complexType name="InstanceTDT">
+    <xs:annotation><xs:documentation>
+      A defined type of instances in the world.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="parameter"         type="ml:ParameterT"   minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="comment"           type="ml:CommentT"     minOccurs="0" maxOccurs="unbounded"/>
+ <!-- <xs:element name="componentType"     type="ml:ComponentTT"  minOccurs="0" maxOccurs="unbounded"/> -->
+      <xs:element name="relatedType"       type="ml:RelatedTT"    minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="subtype"           type="ml:SubtypeT"     minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="instance"          type="ml:InstanceT"    minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="text"              type="ml:TextT"        minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:name"/>
+  </xs:complexType>
+
+  <xs:complexType name="RelatedTT">
+    <xs:annotation><xs:documentation>
+      Identifies a related type of an instance type.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="argument"          type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="text"              type="ml:TextT"        minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="relatedAs" type="ml:NameT"/>
+    <xs:attribute ref="ml:ref"/>
+    <xs:attribute ref="ml:min" use="optional"/>
+    <xs:attribute ref="ml:max" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="SubtypeT">
+    <xs:annotation><xs:documentation>
+      A reference to a subtype of an instance type.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="argument"          type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:ref"/>
+  </xs:complexType>
+
+  <xs:complexType name="SuperT">
+    <xs:annotation><xs:documentation>
+      The super attribute names the supertype of a type definition.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="argument"          type="ml:ArgumentT"    minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:ref"/>
+  </xs:complexType>
+
+  <xs:complexType name="TermDefT" mixed="true">
+    <xs:annotation><xs:documentation>
+      The definition of a term.
+      Terms have names and types,
+      and possibly parameters.
+      The definition of a term is text.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element name="parameter"         type="ml:ParameterT"   minOccurs="0" maxOccurs="unbounded"/>
+      <xs:group ref="ml:MarkupGroup" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:name"/>
+    <xs:attribute ref="ml:type" use="optional"/>
+  </xs:complexType>
+
+
+
+  <!-- Scripts -->
+
+  <!-- script is a top-level element -->
+  <xs:element name="script">
+    <xs:annotation><xs:documentation>
+      A script of occurrences, possibly overlapping and possibly with
+      simultaneous beginnings and/or endings.
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="summary"         type="ml:SummaryT"     minOccurs="0"/>
+        <xs:choice                                             minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="simpleEvent"   type="ml:SimpleEventT"/>
+          <xs:element name="beginEvent"    type="ml:BeginEventT"/>
+          <xs:element name="endEvent"      type="ml:EndEventT"/>
+          <xs:element name="simultaneous"  type="ml:SimultaneousT"/>
+          <xs:element name="typedEvent"    type="ml:TypedEventT"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="BeginEventT">
+    <xs:annotation><xs:documentation>
+      Together with an endEvent, it describes a simple event
+      whose beginning or end can be simultanous with  another event.
+      The type element identifies the type of the event
+      represented by the two tags.
+    </xs:documentation></xs:annotation>
+    <xs:sequence>
+      <xs:element   name="type"     type="ml:TypedEventT"/>
+    </xs:sequence>
+    <xs:attribute ref="ml:name"/>
+  </xs:complexType>
+
+  <xs:complexType name="EndEventT">
+    <xs:annotation><xs:documentation>
+      Closes a beginEvent.
+    </xs:documentation></xs:annotation>
+    <xs:attribute ref="ml:ref"/>
+  </xs:complexType>
+
+  <xs:complexType name="SimultaneousT">
+    <xs:annotation><xs:documentation>
+      Simultaneous endpoints or events..
+    </xs:documentation></xs:annotation>
+    <xs:choice>
+      <xs:choice                                               minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="simpleEvent"   type="ml:SimpleEventT"/>
+        <xs:element name="typedEvent"    type="ml:TypedEventT"/>
+      </xs:choice>
+      <xs:choice                                               minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="beginEvent"    type="ml:BeginEventT"/>
+        <xs:element name="endEvent"      type="ml:EndEventT"/>
+      </xs:choice>
+    </xs:choice>
+  </xs:complexType>
+
+
+  <!-- Attributes -->
+
+  <xs:attribute name="max" type="ml:UnboundedIntegerT" default="1">
+    <xs:annotation><xs:documentation>
+      The upper bound of a range;  0 or higher, or the special value 'unbounded'.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="min" type="xs:nonNegativeInteger" default="1">
+    <xs:annotation><xs:documentation>
+      The lower bound of a range;  0 or higher.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="name" type="ml:NameT">
+    <xs:annotation><xs:documentation>
+      The name attribute defines the name of something.
+      All names are syntactically NCNames [_A-Za-z][-_.A-Za-z0-9]*.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="ref" type="ml:RefNameT">
+    <xs:annotation><xs:documentation>
+      The ref attribute refers to a named something
+      defined elsewhere.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="to" type="ml:RefNameT">
+    <xs:annotation><xs:documentation>
+      The to attribute of a ref element refers to a named something
+      defined elsewhere.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="type" type="ml:NameT">
+    <xs:annotation><xs:documentation>
+      The type attribute defines the type of a parameter or variable,
+      or the type of a comment or termDef.
+      I don't know how these will be specified yet.
+    </xs:documentation></xs:annotation>
+  </xs:attribute>
+
+
+  <!-- Simple types -->
+
+  <xs:simpleType name="AllenRelnT">
+    <xs:annotation><xs:documentation>
+      An Allen relation is named by a string of characters drawn from
+      pmoFDseSdfOMP, in that order.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="p?m?o?F?D?s?e?S?d?f?O?M?P?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+  <xs:simpleType name="AllenRelationNNT">
+    <xs:annotation><xs:documentation>
+      An Allen relation drawn from pmoFDse, in that order.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="p?m?o?F?D?s?e?"/>
+    </xs:restriction>
+  </xs:simpleType>
+  -->
+
+  <xs:simpleType name="AllenRelnPT">
+    <xs:annotation><xs:documentation>
+      An Allen relation drawn from pmoFD, in that order.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="p?m?o?F?D?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="EpisodeAttrT">
+    <xs:annotation><xs:documentation>
+      Which instance a variable references.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="allowed"/>
+      <xs:enumeration value="never"/>
+      <xs:enumeration value="only"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ModalitiesT">
+    <xs:annotation><xs:documentation>
+      The modalities a scenario may have.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="necessary"/>
+      <xs:enumeration value="possible"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NameT">
+    <xs:annotation><xs:documentation>
+      Names.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z][\-_a-zA-Z0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RefNameLfT">
+    <xs:annotation><xs:documentation>
+      Names.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z][\-_a-zA-Z0-9]*(#[a-zA-Z][\-_a-zA-Z0-9]*(\.[a-zA-Z][\-_a-zA-Z0-9]*)?)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RefNameRtT">
+    <xs:annotation><xs:documentation>
+      Names.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(([a-zA-Z][\-_a-zA-Z0-9]*)?#[a-zA-Z][\-_a-zA-Z0-9]*)?\.[a-zA-Z][\-_a-zA-Z0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RefNameMidT">
+    <xs:annotation><xs:documentation>
+      Names.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="#[a-zA-Z][\-_a-zA-Z0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RefNameT">
+    <xs:annotation><xs:documentation>
+      Names.
+    </xs:documentation></xs:annotation>
+    <xs:union memberTypes="ml:RefNameLfT ml:RefNameRtT ml:RefNameMidT"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="UnboundedIntegerT">
+    <xs:annotation><xs:documentation>
+      The non-negative integers, plus the special value "unbounded".
+    </xs:documentation></xs:annotation>
+    <xs:union memberTypes="xs:nonNegativeInteger">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="unbounded"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:simpleType name="WhichT">
+    <xs:annotation><xs:documentation>
+      Which instance a variable references.
+    </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="all"/>
+      <xs:enumeration value="any"/>
+      <xs:enumeration value="new"/>
+      <xs:enumeration value="only"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

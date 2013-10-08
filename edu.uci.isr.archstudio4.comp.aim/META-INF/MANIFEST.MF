@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AIM Component Plug-in
+Bundle-SymbolicName: edu.uci.isr.archstudio4.comp.aim;singleton:=true
+Bundle-Version: 4.1.50.qualifier
+Bundle-Vendor: Institute for Software Research
+Export-Package: edu.uci.isr.archstudio4.comp.aim
+Require-Bundle: edu.uci.isr.xarchflat,
+ edu.uci.isr.myx.fw,
+ edu.uci.isr.myx.fw.eclipse,
+ edu.uci.isr.xadlutils
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

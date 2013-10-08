@@ -1,0 +1,8 @@
+	/**
+	 * Brings an $$(TYPE_INTERFACE_NAME) object created in another
+	 * context into this context.
+	 * @param value Object to recontextualize.
+	 * @return <code>value</code> object in this namespace.
+	 */
+	public $$(TYPE_INTERFACE_NAME) recontextualize$$(TYPE_NAME_CAPPED)($$(TYPE_INTERFACE_NAME) value);
+

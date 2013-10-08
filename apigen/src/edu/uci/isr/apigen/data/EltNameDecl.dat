@@ -1,0 +1,2 @@
+	/** Tag name for $$(ELT_NAME)s in this object. */
+	public static final String $$(ELT_NAME_VARNAME) = "$$(ELT_NAME)";

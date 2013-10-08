@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="apigen"
+   name="apigen"
+   version="0.0.1">
+
+   <runtime>
+      <library name="apigen.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+</plugin>

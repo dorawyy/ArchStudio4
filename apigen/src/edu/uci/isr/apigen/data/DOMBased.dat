@@ -1,0 +1,25 @@
+package edu.uci.isr.xarch;
+
+import org.w3c.dom.*;
+
+/**
+ * Describes an xArch interface implementation
+ * that is based on a DOM node.
+ *
+ * @author Eric M. Dashofy (edashofy@ics.uci.edu)
+ */
+public interface DOMBased{
+
+	/**
+	 * Gets the DOM node on which this implementation is based.
+	 * @return DOM node
+	 */
+	public Node getDOMNode();
+	
+	/**
+	 * Sets the DOM node on which this implementation is based.
+	 * @param n DOM node
+	 */
+	public void setDOMNode(Node n);
+
+}

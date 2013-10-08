@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Myx Framework Eclipse Codegen Plug-in
+Bundle-SymbolicName: edu.uci.isr.myx.fw.eclipse.codegen;singleton:=true
+Bundle-Version: 4.1.50.qualifier
+Bundle-ClassPath: .,
+ bin/
+Bundle-Vendor: Institute for Software Research
+Export-Package: edu.uci.isr.myx2.eclipse.codegen.brick,
+ edu.uci.isr.myx2.eclipse.codegen.codegen,
+ edu.uci.isr.myx2.eclipse.codegen.translator,
+ edu.uci.isr.myx2.eclipse.codegen.ui,
+ edu.uci.isr.myx2.eclipse.codegen.ui.console,
+ edu.uci.isr.myx2.eclipse.codegen.util
+Require-Bundle: org.eclipse.emf.codegen,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.pde.core,
+ org.eclipse.ui,
+ org.eclipse.ui.console,
+ edu.uci.isr.utils.eclipse.pde,
+ edu.uci.isr.myx.fw,
+ org.eclipse.emf.codegen.ecore,
+ edu.uci.isr.myx.fw.eclipse,
+ edu.uci.isr.xarchflat,
+ edu.uci.isr.xadlutils,
+ edu.uci.isr.sysutils,
+ edu.uci.isr.myx.fw.eclipse.pde,
+ org.eclipse.jet
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

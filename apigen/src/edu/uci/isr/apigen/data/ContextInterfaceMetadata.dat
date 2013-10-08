@@ -1,0 +1,6 @@
+
+	public final static XArchTypeMetadata TYPE_METADATA = new XArchTypeMetadata(
+		XArchTypeMetadata.XARCH_CONTEXT,
+		"$$(PACKAGE_TITLE)", null, null,
+		new XArchPropertyMetadata[]{},
+		new XArchActionMetadata[]{$$(CONTEXT_METADATA_ITEMS)});

@@ -1,0 +1,31 @@
+package edu.uci.isr.xarch;
+
+/**
+ * Describes an xArch context object, capable of creating
+ * xArch elements.
+ *
+ * @author Eric M. Dashofy [edashofy@ics.uci.edu]
+ */
+public interface IXArchContext{
+
+	final public static XArchTypeMetadata TYPE_METADATA = new XArchTypeMetadata(
+			XArchTypeMetadata.XARCH_CONTEXT,
+			null, null, null, 
+			new XArchPropertyMetadata[]{},
+			new XArchActionMetadata[]{});
+	
+	/**
+	 * Get the <code>IXArch</code> object that
+	 * this context is based upon.
+	 *
+	 * @return <code>IXArch</code> object upon which
+	 * this context is based.
+	 */
+	public IXArch getXArch();
+
+	/**
+	 * Gets metadata describing the <code>xsi:type</code> of this element.
+	 * @return metadata describing the <code>xsi:type</code> of this element.
+	 */
+	public XArchTypeMetadata getTypeMetadata();
+}

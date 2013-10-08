@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<instance:xArch xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:analysis="http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd" xmlns:hints3="http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd" xmlns:implementation="http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd" xmlns:javaimplementation="http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd" xmlns:javainitparams="http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd" xmlns:lookupimplementation="http://www.ics.uci.edu/pub/arch/xArch/lookupimplementation.xsd" xmlns:tracelink="http://www.ics.uci.edu/pub/arch/xArch/tracelink.xsd" xmlns:tronanalysis="http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/activitydiagrams.xsd http://www.isr.uci.edu/projects/xarchuci/ext/activitydiagrams.xsd http://www.ics.uci.edu/pub/arch/xArch/instance.xsd http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd http://www.ics.uci.edu/pub/arch/xArch/tracelink.xsd http://acts.ics.uci.edu/tracelink/tracelink.xsd http://www.ics.uci.edu/pub/arch/xArch/changesets.xsd http://www.isr.uci.edu/projects/xarchuci/ext/changesets.xsd http://www.ics.uci.edu/pub/arch/xArch/tronanalysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/tronanalysis.xsd http://www.ics.uci.edu/pub/arch/xArch/analysis.xsd http://www.isr.uci.edu/projects/xarchuci/ext/analysis.xsd http://www.ics.uci.edu/pub/arch/xArch/lookupimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/lookupimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/javainitparams.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javainitparams.xsd http://www.ics.uci.edu/pub/arch/xArch/javaimplementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/javaimplementation.xsd http://www.ics.uci.edu/pub/arch/xArch/implementation.xsd http://www.isr.uci.edu/projects/xarchuci/ext/implementation.xsd http://www.ics.uci.edu/pub/arch/xArch/variants.xsd http://www.isr.uci.edu/projects/xarchuci/ext/variants.xsd http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints3.xsd http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd http://www.isr.uci.edu/projects/xarchuci/ext/statecharts.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd">
+<types:archTypes xsi:type="types:ArchTypes">
+<types:componentType types:id="componentTypeffa80164-2da44b71-fc070070-00280002" xsi:type="implementation:VariantComponentTypeImpl">
+<types:description xsi:type="instance:Description">ChatServer Type</types:description>
+<types:signature types:id="signatureffa80164-2da4823f-c3750c0b-00280040" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">chat</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da60ca4-f258c129-00280146" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<types:signature types:id="signatureffa80164-2da4a28f-2f278f24-00280063" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">chatevents</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+<javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">myproj.server.ChatServerMyxComponent</javaimplementation:javaClassName>
+</javaimplementation:mainClass>
+</implementation:implementation>
+
+
+
+</types:componentType>
+<types:componentType types:id="componentTypeffa80164-2da4d27b-972e57a5-0028006e" xsi:type="implementation:VariantComponentTypeImpl">
+<types:description xsi:type="instance:Description">ChatClient Type</types:description>
+<types:signature types:id="signatureffa80164-2da4f13a-b371f36d-00280092" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">chat</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da60ca4-f258c129-00280146" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<types:signature types:id="signatureffa80164-2da516e6-72b1ced8-002800b5" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">chatevents</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+<javaimplementation:mainClass xsi:type="javaimplementation:JavaClassFile">
+<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">myproj.client.ChatClientMyxComponent</javaimplementation:javaClassName>
+</javaimplementation:mainClass>
+</implementation:implementation>
+
+
+
+</types:componentType>
+<types:connectorType types:id="connectorTypeffa80164-2da549b7-157af6ff-002800c0" xsi:type="implementation:VariantConnectorTypeImpl">
+<types:description xsi:type="instance:Description">EventPump Type</types:description>
+<types:signature types:id="signatureffa80164-2da5b6ef-716c629e-00280118" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">in</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<types:signature types:id="signatureffa80164-2da5cc5f-79d74f61-0028013a" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">out</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+
+
+</types:signature>
+<implementation:implementation xsi:type="javaimplementation:JavaImplementation">
+<javaimplementation:mainClass xsi:type="javainitparams:JavaClassFileParams">
+<javaimplementation:javaClassName xsi:type="javaimplementation:JavaClassName">edu.uci.isr.myx.conn.EventPumpConnector</javaimplementation:javaClassName>
+<javainitparams:initializationParameter javainitparams:name="interfaceClassName0" javainitparams:value="myproj.IChatListener" xsi:type="javainitparams:InitializationParameter"/>
+</javaimplementation:mainClass>
+</implementation:implementation>
+
+
+
+</types:connectorType>
+<types:interfaceType types:id="interfaceTypeffa80164-2da60ca4-f258c129-00280146" xsi:type="implementation:InterfaceTypeImpl">
+<types:description xsi:type="instance:Description">chat type</types:description>
+<implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+<lookupimplementation:name xsi:type="lookupimplementation:LookupName">chat</lookupimplementation:name>
+</implementation:implementation>
+
+</types:interfaceType>
+<types:interfaceType types:id="interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xsi:type="implementation:InterfaceTypeImpl">
+<types:description xsi:type="instance:Description">chatevents type</types:description>
+<implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+<lookupimplementation:name xsi:type="lookupimplementation:LookupName">chatevents</lookupimplementation:name>
+</implementation:implementation>
+
+</types:interfaceType>
+<types:interfaceType types:id="interfaceTypeffa80164-2ddaa474-c450f7b2-2723018d" xsi:type="implementation:InterfaceTypeImpl">
+<types:description xsi:type="instance:Description">in type</types:description>
+<implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+<lookupimplementation:name xsi:type="lookupimplementation:LookupName">in</lookupimplementation:name>
+</implementation:implementation>
+</types:interfaceType>
+<types:interfaceType types:id="interfaceTypeffa80164-2ddab7f0-c7e21f65-2723018e" xsi:type="implementation:InterfaceTypeImpl">
+<types:description xsi:type="instance:Description">out type</types:description>
+<implementation:implementation xsi:type="lookupimplementation:LookupImplementation">
+<lookupimplementation:name xsi:type="lookupimplementation:LookupName">out</lookupimplementation:name>
+</implementation:implementation>
+</types:interfaceType>
+
+
+
+
+
+</types:archTypes>
+<hints3:renderingHints3 xsi:type="hints3:RenderingHints3">
+        <hints3:hintedElement hints3:maintainer="edu.uci.isr.archstudio4.comp.archipelago" hints3:type="XML" hints3:version="4.0.0" xsi:type="hints3:HintBundle">
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#archStructureffa80164-2dcb5024-1ae3b10e-27230056" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10175,10000,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcb797d-3dd03adc-2723005a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcb797d-48c89113-2723005b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10250,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10250,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10150,10250,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcc08aa-55067f98-2723013d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10170,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10170,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcc08aa-6a37d053-2723013e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10220,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10220,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#componentffa80164-2ddd6921-97c642ca-2723023f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10375,10250,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2ddd692b-2903f5bc-27230240" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10395,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10395,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2ddd692b-2ed1f463-27230241" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10445,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10445,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connectorffa80164-2dcb8ea7-d06d1ad0-2723008b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10275,10175,100,25" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcb8ea7-f37419a0-2723008c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10325,10175" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10333,10175" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#interfaceffa80164-2dcb8ea7-b6605e18-2723008d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10325,10200" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10333,10200" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#linkffa80164-2dcba706-9477f0c5-272300d7" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassEndpoint1" xsi:type="hints3:Property">
+<hints3:value hints3:data="10250,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassEndpoint2" xsi:type="hints3:Property">
+<hints3:value hints3:data="10325,10175" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassMidpoints" xsi:type="hints3:Property">
+<hints3:value hints3:type="org.eclipse.swt.graphics.Point[]" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="splineColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="0,0,0" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#linkffa80164-2dcc19c2-f12bc9f1-2723016d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassEndpoint1" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassEndpoint2" xsi:type="hints3:Property">
+<hints3:value hints3:data="10170,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassMidpoints" xsi:type="hints3:Property">
+<hints3:value hints3:type="org.eclipse.swt.graphics.Point[]" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="splineColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="0,0,0" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#linkffa80164-2dcc2fa0-bd8f0d3a-2723017b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassEndpoint1" xsi:type="hints3:Property">
+<hints3:value hints3:data="10325,10200" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassEndpoint2" xsi:type="hints3:Property">
+<hints3:value hints3:data="10220,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassMidpoints" xsi:type="hints3:Property">
+<hints3:value hints3:type="org.eclipse.swt.graphics.Point[]" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="splineColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="0,0,0" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#linkffa80164-2ddd840b-67bb65c3-27230271" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassEndpoint1" xsi:type="hints3:Property">
+<hints3:value hints3:data="10325,10200" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassEndpoint2" xsi:type="hints3:Property">
+<hints3:value hints3:data="10445,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassMidpoints" xsi:type="hints3:Property">
+<hints3:value hints3:type="org.eclipse.swt.graphics.Point[]" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="splineColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="0,0,0" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#linkffa80164-2ddd9a94-ec6e833b-2723027f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassEndpoint1" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassEndpoint2" xsi:type="hints3:Property">
+<hints3:value hints3:data="10395,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="glassMidpoints" xsi:type="hints3:Property">
+<hints3:value hints3:type="org.eclipse.swt.graphics.Point[]" xsi:type="hints3:PropertyValue">
+<hints3:value hints3:data="10225,10225" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:value>
+</hints3:property>
+<hints3:property hints3:name="splineColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="0,0,0" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#componentTypeffa80164-2da44b71-fc070070-00280002" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10125,10025,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="104,113,191" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da4823f-c3750c0b-00280040" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10150,10125" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10150,10125" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da4a28f-2f278f24-00280063" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10125" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10200,10125" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#componentTypeffa80164-2da4d27b-972e57a5-0028006e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10030,10030,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="104,113,191" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da4f13a-b371f36d-00280092" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10050,10030" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10050,10030" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da516e6-72b1ced8-002800b5" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10100,10030" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10100,10030" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connectorTypeffa80164-2da549b7-157af6ff-002800c0" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassBoundingBox" xsi:type="hints3:Property">
+<hints3:value hints3:data="10125,10050,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="191,159,96" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da5b6ef-716c629e-00280118" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10175,10050" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10175,10050" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#signatureffa80164-2da5cc5f-79d74f61-0028013a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<hints3:property hints3:name="glassAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10175,10150" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAnchorPoint" xsi:type="hints3:Property">
+<hints3:value hints3:data="10175,10150" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagVisible" xsi:type="hints3:Property">
+<hints3:value hints3:data="false" hints3:type="java.lang.Boolean" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+<hints3:property hints3:name="tagAngle" xsi:type="hints3:Property">
+<hints3:value hints3:data="0" hints3:type="java.lang.Integer" xsi:type="hints3:PropertyValue"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+
+
+
+
+
+
+
+</hints3:hintedElement>
+        <hints3:hintedElement hints3:maintainer="edu.uci.isr.archstudio4.comp.archipelago" hints3:version="4.1.0" xsi:type="hints3:HintBundle">
+            <hints3:hintedElement xsi:type="hints3:HintedElement">
+                <hints3:target xlink:href="#archStructureffa80164-2dcb5024-1ae3b10e-27230056" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#linkffa80164-2dcba706-9477f0c5-272300d7" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/midpoints" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{}" hints3:type="{[Lorg.eclipse.swt.graphics.Point;,0}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10255,10105" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10320,10170" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#linkffa80164-2dcc19c2-f12bc9f1-2723016d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/midpoints" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{}" hints3:type="{[Lorg.eclipse.swt.graphics.Point;,0}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10199,10105" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10171,10245" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#linkffa80164-2dcc2fa0-bd8f0d3a-2723017b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/midpoints" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{}" hints3:type="{[Lorg.eclipse.swt.graphics.Point;,0}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10320,10202" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10225,10248" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#linkffa80164-2ddd840b-67bb65c3-27230271" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/midpoints" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{}" hints3:type="{[Lorg.eclipse.swt.graphics.Point;,0}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10330,10202" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10440,10248" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#linkffa80164-2ddd9a94-ec6e833b-2723027f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/midpoints" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{}" hints3:type="{[Lorg.eclipse.swt.graphics.Point;,0}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10205,10104" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10390,10246" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint1-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="glass/endpoint2-StuckInfo" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="{EDGE_FROM_CENTER}" hints3:type="{[Ljava.lang.Object;,1,enum:edu.uci.isr.bna4.logics.coordinating.MaintainStickyPointLogic$StickyMode}" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/boundingBox" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10175,10000,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="background/color" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    
+                    
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcb797d-3dd03adc-2723005a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10200,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcb797d-48c89113-2723005b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10250,10100" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/boundingBox" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10150,10250,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="background/color" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    
+                    
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcc08aa-55067f98-2723013d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10170,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcc08aa-6a37d053-2723013e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10220,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#componentffa80164-2ddd6921-97c642ca-2723023f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/boundingBox" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10375,10250,100,100" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="background/color" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="197,203,255" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    
+                    
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2ddd692b-2903f5bc-27230240" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10395,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2ddd692b-2ed1f463-27230241" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10445,10250" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#connectorffa80164-2dcb8ea7-d06d1ad0-2723008b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/boundingBox" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10275,10175,100,25" hints3:type="org.eclipse.swt.graphics.Rectangle" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    <hints3:property hints3:name="background/color" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="255,234,191" hints3:type="org.eclipse.swt.graphics.RGB" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                    
+                    
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcb8ea7-f37419a0-2723008c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10325,10175" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+                <hints3:hintedElement xsi:type="hints3:HintedElement">
+                    <hints3:target xlink:href="#interfaceffa80164-2dcb8ea7-b6605e18-2723008d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                    <hints3:property hints3:name="glass/anchorPoint" xsi:type="hints3:Property">
+                        <hints3:value hints3:data="10325,10200" hints3:type="org.eclipse.swt.graphics.Point" xsi:type="hints3:PropertyValue"/>
+                    </hints3:property>
+                </hints3:hintedElement>
+            </hints3:hintedElement>
+        </hints3:hintedElement>
+
+</hints3:renderingHints3>
+<types:archStructure types:id="archStructureffa80164-2dcb5024-1ae3b10e-27230056" xsi:type="types:ArchStructure">
+<types:description xsi:type="instance:Description">main</types:description>
+<types:component types:id="componentffa80164-2dcb7973-c8c35d6d-27230059" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">ChatServer</types:description>
+<types:interface types:id="interfaceffa80164-2dcb797d-3dd03adc-2723005a" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chat</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da60ca4-f258c129-00280146" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da4823f-c3750c0b-00280040" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:interface types:id="interfaceffa80164-2dcb797d-48c89113-2723005b" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chatevents</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da4a28f-2f278f24-00280063" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:type xlink:href="#componentTypeffa80164-2da44b71-fc070070-00280002" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:component>
+<types:component types:id="componentffa80164-2dcc08aa-c6d87d16-2723013c" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">ChatClient 1</types:description>
+<types:interface types:id="interfaceffa80164-2dcc08aa-55067f98-2723013d" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chat</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da60ca4-f258c129-00280146" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da4f13a-b371f36d-00280092" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:interface types:id="interfaceffa80164-2dcc08aa-6a37d053-2723013e" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chatevents</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da516e6-72b1ced8-002800b5" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:type xlink:href="#componentTypeffa80164-2da4d27b-972e57a5-0028006e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:component>
+<types:component types:id="componentffa80164-2ddd6921-97c642ca-2723023f" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">ChatClient 2</types:description>
+<types:interface types:id="interfaceffa80164-2ddd692b-2903f5bc-27230240" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chat</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da60ca4-f258c129-00280146" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da4f13a-b371f36d-00280092" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:interface types:id="interfaceffa80164-2ddd692b-2ed1f463-27230241" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">chatevents</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2da637b6-9f84fee6-00280147" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da516e6-72b1ced8-002800b5" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:type xlink:href="#componentTypeffa80164-2da4d27b-972e57a5-0028006e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:component>
+<types:connector types:id="connectorffa80164-2dcb8ea7-d06d1ad0-2723008b" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">EventPump</types:description>
+<types:interface types:id="interfaceffa80164-2dcb8ea7-f37419a0-2723008c" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">in</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2ddaa474-c450f7b2-2723018d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da5b6ef-716c629e-00280118" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:interface types:id="interfaceffa80164-2dcb8ea7-b6605e18-2723008d" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">out</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:type xlink:href="#interfaceTypeffa80164-2ddab7f0-c7e21f65-2723018e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+<types:signature xlink:href="#signatureffa80164-2da5cc5f-79d74f61-0028013a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:interface>
+<types:type xlink:href="#connectorTypeffa80164-2da549b7-157af6ff-002800c0" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:connector>
+<types:link types:id="linkffa80164-2dcba706-9477f0c5-272300d7" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">[New Link]</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb797d-48c89113-2723005b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb8ea7-f37419a0-2723008c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                
+                
+
+</types:point>
+</types:link>
+<types:link types:id="linkffa80164-2dcc19c2-f12bc9f1-2723016d" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">[New Link]</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb797d-3dd03adc-2723005a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcc08aa-55067f98-2723013d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                
+                
+
+</types:point>
+</types:link>
+<types:link types:id="linkffa80164-2dcc2fa0-bd8f0d3a-2723017b" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">[New Link]</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb8ea7-b6605e18-2723008d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcc08aa-6a37d053-2723013e" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                
+                
+
+</types:point>
+</types:link>
+<types:link types:id="linkffa80164-2ddd840b-67bb65c3-27230271" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">[New Link]</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb8ea7-b6605e18-2723008d" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interfaceffa80164-2ddd692b-2ed1f463-27230241" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                
+                
+
+</types:point>
+</types:link>
+<types:link types:id="linkffa80164-2ddd9a94-ec6e833b-2723027f" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">[New Link]</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#interfaceffa80164-2dcb797d-3dd03adc-2723005a" xlink:type="simple" xsi:type="instance:XMLLink"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+                <instance:anchorOnInterface xlink:href="#interfaceffa80164-2ddd692b-2903f5bc-27230240" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                
+                
+
+</types:point>
+</types:link>
+
+
+
+
+
+
+
+</types:archStructure>
+<analysis:archAnalysis xsi:type="analysis:ArchAnalysis">
+<analysis:analysis tronanalysis:id="ffa80164-2dd79fe6-d935b215-2723018b" xsi:type="tronanalysis:TronAnalysis">
+<tronanalysis:description xsi:type="instance:Description">Archlight Analysis Tests</tronanalysis:description>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10id2" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/No Duplicate IDs</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10e" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/ArchStructures/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c8d04f.6da6c6b508aeb61d.10f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/ArchStructures/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c8e01d.562cc2871d077a3.110" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/ArchStructures/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.10285474143.ad9c42b14784eb5d.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.1028548ab08.860591990d819f77.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.1028548ab08.860591990d819f78.1" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b211d999.7ff5df43c1573f3b.22" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b217399a.fce08258bb50fd89.23" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b2174e0f.d11c6eb2887d55f1.24" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b21d5505.55d0461685980f25.25" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b21d66e6.5b517931e3875c49.26" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b21d7fe5.f442f989102bb66a.27" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Components/Interfaces/Direction Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.10285474143.ad9c42b14784eb5d.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.1028548ab08.860591990d819f77.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.1028548ab08.860591990d819f78.1" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b211d999.7ff5df43c1573f3b.22" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b217399a.fce08258bb50fd89.23" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b2174e0f.d11c6eb2887d55f1.24" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b21d5505.55d0461685980f25.25" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b21d66e6.5b517931e3875c49.26" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147e.102b21d7fe5.f442f989102bb66a.27" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Connectors/Interfaces/Direction Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b27ad91c.a674a634512e584.11a" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b27aed37.ce56ed05264c62d5.11b" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b27afce7.1725b1c2a18cc9a8.11c" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b27afce7.1725b1c2a18cc9a8.11d" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Two Points</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b27aed37.ce56ed05264c62d5.11f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Anchors Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b32c629a.8bedb9e05f903208.22" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Anchors Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3307532.81b7ae1f46af1059.23" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Anchors connect to Interfaces</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b33a6502.c581b5587f597235.fb" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Structure/Links/Interface Directions Compatible</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.10f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/ArchTypes/ArchTypes Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102b3c70dfa.2576389267ac4a8a.11a" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/ArchTypes/No Multiple ArchTypes</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.10285474143.ad9c42b14784eb5d.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.1028548ab08.860591990d819f77.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.1028548ab08.860591990d819f78.1" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b211d999.7ff5df43c1573f3b.22" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b217399a.fce08258bb50fd89.23" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b2174e0f.d11c6eb2887d55f1.24" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b21d5505.55d0461685980f25.25" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b21d66e6.5b517931e3875c49.26" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148f.102b21d7fe5.f442f989102bb66a.27" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Signatures/Direction Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2330cbc.b88091d54bd1c705.63" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d23320a5.6e97fc7f5dbca4b7.64" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d233343e.3855e34cb21c47fa.65" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/ArchStructure link -&gt; ArchStructure</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2461bdc.aa7267d23ffe6dec.67" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2462df8.50dd2e4239074a3d.68" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2463cf4.46c7ea64d817aea1.69" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d25464ae.a11b236470590525.6d" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2548056.27bd577e0865f6ef.6e" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2549c30.9d678610a8fe1fcb.6f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link -&gt; Signature</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d27f6e8e.19606b6364f14a06.2ae" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d27f80fa.14fcbe1a7a64f491.2af" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d27f9cdf.d5760acda180fdc5.2b0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Component Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link -&gt; Interface</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.10285474143.ad9c42b14784eb5d.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.1028548ab08.860591990d819f77.0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.1028548ab08.860591990d819f78.1" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b211d999.7ff5df43c1573f3b.22" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b217399a.fce08258bb50fd89.23" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b2174e0f.d11c6eb2887d55f1.24" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b21d5505.55d0461685980f25.25" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b21d66e6.5b517931e3875c49.26" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3148e.102b21d7fe5.f442f989102bb66a.27" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Signatures/Direction Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2330cbc.b88091d54bd1c705.63" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d23320a5.6e97fc7f5dbca4b7.64" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d233343e.3855e34cb21c47fa.65" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/ArchStructure link -&gt; ArchStructure</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2461bdc.aa7267d23ffe6dec.67" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/ID Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2462df8.50dd2e4239074a3d.68" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/Description Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2463cf4.46c7ea64d817aea1.69" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/Description Non-Empty</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d25464ae.a11b236470590525.6d" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2548056.27bd577e0865f6ef.6e" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d2549c30.9d678610a8fe1fcb.6f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/OuterSignature Link -&gt; Signature</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d27f6e8e.19606b6364f14a06.2ae" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d27f80fa.14fcbe1a7a64f491.2af" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.91c3147f.102d27f9cdf.d5760acda180fdc5.2b0" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connector Types/Subarchitectures/Signature-Interface Mappings/InnerInterface Link -&gt; Interface</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d1dc8116.ece17366a4a52d1e.56" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Type Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d1db4ebf.72e29631d7c1132d.55" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Type Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d1e180d1.6a33fa59ea1cb12.57" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Type link -&gt; ComponentType</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d21cf3d9.ce7bb0a435fa1927.59" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d21fc439.7c927fba704208cf.5a" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2265559.cc933d4995c90295.5b" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Interfaces/Signature link -&gt; Signature</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d2871711.ff3a20b004329533.2b2" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Components/Interfaces/Interface Type = Signature Type</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22c4dd6.4084ec4646a1f3c0.5c" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Type Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22c6906.172c1f889f291964.5d" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Type Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22c7ef8.aede0aa856fdff66.5e" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Type link -&gt; ConnectorType</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22c9711.ffd6982ba46f2330.5f" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature Link Present</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22caaaa.b4e1d1e0cac6cda5.60" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature Link Valid</tronanalysis:description>
+</tronanalysis:test>
+<tronanalysis:test tronanalysis:enabled="true" tronanalysis:id="test.80c3147f.102d22cc074.2fc69c1825fff71b.61" xsi:type="tronanalysis:Test">
+<tronanalysis:description xsi:type="instance:Description">Tool: Schematron; Category: xADL 2.0/Structure and Types/Types/Connectors/Interfaces/Signature link -&gt; Signature</tronanalysis:description>
+</tronanalysis:test>
+</analysis:analysis>
+</analysis:archAnalysis>
+<tracelink:archTraceLinks xsi:type="tracelink:ArchTraceLinks">
+        <tracelink:traceLink tracelink:traceLinkID="tlink1111" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint1111a" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:groupname="ISR" tracelink:username="hazel" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">3/17/2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">manual</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint1111b" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="http://www.ics.uci.edu/~edashofy/classes/211/myx-assignment.ppt#269,10,Implementing ChatServer" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="tl2222" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint2222a" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#connectorffa80164-2dcb8ea7-d06d1ad0-2723008b" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint2222b" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="http://www.isr.uci.edu/projects/archstudio/resources/myx-whitepaper.pdf" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="tlink3333" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">implementation</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint3333a" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="http://www.ics.uci.edu/~edashofy/classes/211/" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint3333b" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="tendpoint3333c" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2ddd6921-97c642ca-2723023f" xlink:type="simple" xsi:type="instance:XMLLink"/>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffdf26-395b8ded-cb4aea88-8742007d" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to Documents</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395b8ded-0e6d57d0-8742007e" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:21:51 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffdf26-395b9494-ab891b3e-87420098" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to Documents</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395b9494-3d4ed8da-87420099" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:21:51 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffdf26-395b9a90-780ab0dd-874200b3" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to Documents</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395b9a9a-b7976e6d-874200b4" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:21:51 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffdf26-395bdc84-1057fcc8-874200ce" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to Documents</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395bdc84-9812008a-874200cf" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:21:51 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395bdc84-ae8f3e8f-874200d0" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/edu.uci.isr.archstudio4.comp.tracelink/res/chatsys.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:22:04 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffdf26-395bdc84-8c2c45b1-874200d1" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/edu.uci.isr.archstudio4.comp.tracelink/res/oneComponentTrace.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 10:22:04 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffbc-3a3e834a-c350406e-fb6201aa" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to Documents</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbc-3a3e8354-9d7cfb26-fb6201ab" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/edu.uci.isr.archstudio4.comp.tracelink/res/oneComponentTrace.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 14:29:41 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbc-3a3e8354-2ef079b3-fb6201ac" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/edu.uci.isr.archstudio4.comp.tracelink/res/archstudio4.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 14:29:41 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbc-3a3e835e-7b5f4ca7-fb6201ad" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="Dilbert" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Apr 10 14:29:45 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffb1-37452b86-99b63e4a-ba2a00e1" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description"/>
+            </tracelink:traceLinkRelationship>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffb1-37452bfe-403a4ea8-ba2a00e2" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description"/>
+            </tracelink:traceLinkRelationship>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffbe-57e3385e-89ca3ee1-d78f0113" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbe-57e3385e-a6313842-d78f0114" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test/test.doc" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Jun 05 01:41:20 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbe-57e33868-c63bd47f-d78f0115" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/xADL_traceabilityExt.pdf" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Jun 05 01:41:21 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffbe-57e33868-80761541-d78f0116" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test.html" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Thu Jun 05 01:41:24 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5ef9bcb3-37711345-6baa0e67" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5ef9bcb3-3f9998eb-6baa0e68" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/chatsys.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:43:19 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5ef9bcbd-e52bef39-6baa0e69" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/archstudio4.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:43:19 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5efa8936-555e0c77-6baa0eeb" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efa8936-3da4968a-6baa0eec" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/chatsys.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:44:10 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efa8940-7e1ecf5f-6baa0eed" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/archstudio4.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:44:10 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efa8940-727af4b7-6baa0eee" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/oneComponentTrace.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:44:13 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5efb597b-9163f48d-6baa0f55" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efb597b-49d2f295-6baa0f56" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/oneComponentTrace.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:45:01 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efb597b-a07f7c2f-6baa0f57" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/chatsys.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:45:02 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5efb5985-b6bbd321-6baa0f58" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/archstudio4.xml" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 10:45:03 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5f1da9c1-9691bf64-510c0113" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f1da9c1-5544560a-510c0114" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcc08aa-c6d87d16-2723013c" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 11:22:30 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f1da9cb-2b821420-510c0115" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test.html" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:author tracelink:username="dpurpura" xsi:type="tracelink:Author"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 11:22:34 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5f49b3e5-28708d88-dfc3007d" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Requirements_Link</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">rationale</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f49b3ef-a684566d-dfc3007e" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:10:33 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f49b3f9-c08e648d-dfc3007f" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test/test.doc" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:10:40 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        <tracelink:traceLink tracelink:traceLinkID="TraceLinkffffffac-5f4d13df-abe1c86e-dfc30099" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description"/>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">david wrote it</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f4d13df-9ab4099b-dfc3009a" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffa80164-2dcb7973-c8c35d6d-27230059" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:14:16 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f4d13e9-111a3fd6-dfc3009b" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#connectorffa80164-2dcb8ea7-d06d1ad0-2723008b" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:14:17 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f4d13e9-09dcddb0-dfc3009c" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test/test.doc" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:14:20 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="TraceEndpointffffffac-5f4d13e9-ef2a684c-dfc3009d" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="/ACTS/res/test/test.docx" xsi:type="instance:XMLLink" xlink:type="simple"/>
+                <tracelink:author xsi:type="tracelink:Author" tracelink:username="dpurpura"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">Fri Jun 06 12:14:20 PDT 2008</tracelink:dateTime>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">auto_record</tracelink:captureMode>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </tracelink:archTraceLinks>
+</instance:xArch>

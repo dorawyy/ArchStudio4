@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="edu.uci.isr.myx2.eclipse.myxBrick">
+      <brick
+            baseJavaClass="edu.uci.isr.archstudio4.comp.bootstrap.AbstractBootstrapMyxComponent"
+            defaultImplClass="edu.uci.isr.archstudio4.comp.bootstrap.BootstrapMyxComponent"
+            id="edu.uci.isr.archstudio4.comp.bootstrap.BootstrapMyxComponent"
+            name="BootstrapMyxComponent">
+         <interface
+               connectionTiming="beforeInit"
+               direction="outSingleServiceObject"
+               id="edu.uci.isr.archstudio4.comp.bootstrap.BootstrapMyxComponent.myx"
+               javaInterface="edu.uci.isr.myx.fw.IMyxRuntime"
+               name="myx"
+               templateType="delegate">
+         </interface>
+         <interface
+               connectionTiming="beforeInit"
+               direction="outSingleServiceObject"
+               id="edu.uci.isr.archstudio4.comp.bootstrap.BootstrapMyxComponent.aim"
+               javaInterface="edu.uci.isr.archstudio4.comp.aim.IAIM"
+               name="aim"
+               templateType="delegate">
+         </interface>
+         <interface
+               connectionTiming="beforeInit"
+               direction="outSingleServiceObject"
+               id="edu.uci.isr.archstudio4.comp.bootstrap.BootstrapMyxComponent.xarch"
+               javaInterface="edu.uci.isr.xarchflat.XArchFlatInterface"
+               name="xarch"
+               templateType="delegate">
+         </interface>
+      </brick>
+   </extension>
+
+</plugin>

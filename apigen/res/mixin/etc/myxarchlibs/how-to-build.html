@@ -1,0 +1,48 @@
+<html>
+<head><title>Building your Custom Data Binding Library</title></head>
+<body bgcolor="#ffffff">
+<h1>Building your Custom Data Binding Library</h1>
+
+<p>Apigen generates a library of .java files that can be compiled
+and built into a .jar library to be incorporated into software projects
+of your own design.  Once these files are generated, you need to
+perform a build to create this .jar file.  You can do this with the
+MAB2 automated build system.  To use MAB2 for this, you need:
+
+<ul>
+<li>A Java 1.4.2 or later compiler
+<li>Apache Ant 1.6.2 or later
+<li>The files in the Apigen <code>apigen/etc/myxarchlibs</code> directory.
+</ul>
+
+<p><b>Step 1:</b> Download and install a Java compiler; the Sun
+Java 2 Software Development Kit (J2SDK) is the most common way to get
+this.  You can download this for multiple platforms from the
+following URL:
+
+<p><a href="http://java.sun.com/j2se/1.4.2/download.html">http://java.sun.com/j2se/1.4.2/download.html</a>
+
+<p><b>Step 2:</b> Download and install Apache Ant.  You can download
+Ant from this URL:
+
+<p><a href="http://ant.apache.org/">http://ant.apache.org/</a>
+
+<p><b>Step 3 (optional):</b> Copy the <code>apigen/etc/myxarchlibs</code> directory
+(the directory containing this HTML file) to a location where you want to
+generate libraries.  Feel free to rename it to
+something more sensible for your project.  For the remainder
+of this discussion we will refer to this directory as the <code>myxarchlibs</code>
+directory, however.
+
+<p><b>Step 4:</b> Run Apigen and set its output directory to the
+<code>.../myxarchlibs/src/</code> directory.  Generate data binding code.
+
+<p><b>Step 5:</b> Open a command prompt window and run Ant in the
+<code>myxarchlibs</code> directory.  Make sure you have the environment
+variables <code>JAVA_HOME</code> and <code>ANT_HOME</code> set appropriately
+for Ant.  This should cause Ant to build and Javadoc your data binding library.
+The .jar file it creates will be located in <code>.../myxarchlibs/lib</code>.
+Add this .jar file to your classpath and enjoy!
+
+</body>
+</html>

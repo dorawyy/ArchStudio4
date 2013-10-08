@@ -1,0 +1,66 @@
+
+	/**
+	 * Add a $$(ELT_NAME) to this $$(TYPE_NAME).
+	 * @param new$$(ELT_NAME_CAPPED) $$(ELT_NAME) to add.
+	 */
+	public void add$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) new$$(ELT_NAME_CAPPED));
+
+	/**
+	 * Add a collection of $$(ELT_NAME)s to this $$(TYPE_NAME).
+	 * @param $$(ELT_NAME)s $$(ELT_NAME)s to add.
+	 */
+	public void add$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)s);
+
+	/**
+	 * Remove all $$(ELT_NAME)s from this $$(TYPE_NAME).
+	 */
+	public void clear$$(ELT_NAME_CAPPED)s();
+
+	/**
+	 * Remove the given $$(ELT_NAME) from this $$(TYPE_NAME).
+	 * Matching is done by the <code>isEquivalent(...)</code> function.
+	 * @param $$(ELT_NAME)ToRemove $$(ELT_NAME) to remove.
+	 */
+	public void remove$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) $$(ELT_NAME)ToRemove);
+
+	/**
+	 * Remove all the given $$(ELT_NAME)s from this $$(TYPE_NAME).
+	 * Matching is done by the <code>isEquivalent(...)</code> function.
+	 * @param $$(ELT_NAME)s $$(ELT_NAME) to remove.
+	 */
+	public void remove$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)s);
+
+	/**
+	 * Get all the $$(ELT_NAME)s from this $$(TYPE_NAME).
+	 * @return all $$(ELT_NAME)s in this $$(TYPE_NAME).
+	 */
+	public Collection getAll$$(ELT_NAME_CAPPED)s();
+
+	/**
+	 * Determine if this $$(TYPE_NAME) contains a given $$(ELT_NAME).
+	 * @return <code>true</code> if this $$(TYPE_NAME) contains the given
+	 * $$(ELT_NAME)ToCheck, <code>false</code> otherwise.
+	 */
+	public boolean has$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) $$(ELT_NAME)ToCheck);
+
+	/**
+	 * Determine if this $$(TYPE_NAME) contains the given set of $$(ELT_NAME)s.
+	 * @param $$(ELT_NAME)sToCheck $$(ELT_NAME)s to check for.
+	 * @return Collection of <code>java.lang.Boolean</code>.  If the i<sup>th</sup>
+	 * element in <code>$$(ELT_NAME)s</code> was found, then the i<sup>th</sup>
+	 * element of the collection will be set to <code>true</code>, otherwise it
+	 * will be set to <code>false</code>.  Matching is done with the
+	 * <code>isEquivalent(...)</code> method.
+	 */
+	public Collection has$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)sToCheck);
+
+	/**
+	 * Determine if this $$(TYPE_NAME) contains each element in the 
+	 * given set of $$(ELT_NAME)s.
+	 * @param $$(ELT_NAME)sToCheck $$(ELT_NAME)s to check for.
+	 * @return <code>true</code> if every element in
+	 * <code>$$(ELT_NAME)s</code> is found in this $$(TYPE_NAME),
+	 * <code>false</code> otherwise.
+	 */
+	public boolean hasAll$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)sToCheck);
+

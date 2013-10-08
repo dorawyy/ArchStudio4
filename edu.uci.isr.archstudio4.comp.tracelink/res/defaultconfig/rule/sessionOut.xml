@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.6.0_05" class="java.beans.XMLDecoder">
+<object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel">
+<void property="element">
+<string>#componentffa80164-fc12dd78-94c9bc1e-19f000ae</string>
+</void>
+<void property="groupNum">
+<int>1</int>
+</void>
+<void property="relationship">
+<string/>
+</void>
+<void property="selectedItem">
+<object class="org.eclipse.jface.viewers.StructuredSelection"/>
+</void>
+<void property="timeStamp">
+<object class="java.util.Date">
+<long>1224727698078</long>
+</object>
+</void>
+<void property="view">
+<string>edu.uci.isr.archstudio4.comp.archipelago.ArchipelagoEditor@1e373de</string>
+</void>
+</object>
+<object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel">
+<void property="element">
+<string>/ProjectArtifacts_Trace/notes_logging.doc</string>
+</void>
+<void property="groupNum">
+<int>1</int>
+</void>
+<void property="relationship">
+<string/>
+</void>
+<void property="selectedItem">
+<object class="org.eclipse.jface.viewers.TreeSelection"/>
+</void>
+<void property="timeStamp">
+<object class="java.util.Date">
+<long>1224727699750</long>
+</object>
+</void>
+<void property="view">
+<string>org.eclipse.ui.views.navigator.ResourceNavigator@1a5e4e4</string>
+</void>
+</object>
+<object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel">
+<void property="element">
+<string>/ProjectArtifacts_Trace/openHypermedia.pdf</string>
+</void>
+<void property="groupNum">
+<int>1</int>
+</void>
+<void property="relationship">
+<string/>
+</void>
+<void property="selectedItem">
+<object class="org.eclipse.jface.viewers.TreeSelection"/>
+</void>
+<void property="timeStamp">
+<object class="java.util.Date">
+<long>1224727701484</long>
+</object>
+</void>
+<void property="view">
+<string>org.eclipse.ui.views.navigator.ResourceNavigator@1a5e4e4</string>
+</void>
+</object>
+</java>

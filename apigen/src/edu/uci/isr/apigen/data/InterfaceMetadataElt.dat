@@ -1,0 +1,2 @@
+
+			XArchPropertyMetadata.createElement("$$(ELT_NAME)", "$$(ELT_TYPE_CONTEXT_NAME)", "$$(ELT_TYPE_NAME)", $$(ELT_MIN_OCCURS_CONST), $$(ELT_MAX_OCCURS_CONST))

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Related Elements Plugin
+Bundle-SymbolicName: edu.uci.isr.archstudio4.comp.relatedelements
+Bundle-Version: 4.1.50.qualifier
+Bundle-Vendor: Institute of Software Research
+Export-Package: edu.uci.isr.archstudio4.comp.relatedelements,
+ edu.uci.isr.archstudio4.comp.relatedelements.processors
+Require-Bundle: edu.uci.isr.xarchflat,
+ edu.uci.isr.myx.fw

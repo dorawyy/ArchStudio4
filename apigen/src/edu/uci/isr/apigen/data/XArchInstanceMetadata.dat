@@ -1,0 +1,19 @@
+package edu.uci.isr.xarch;
+
+public class XArchInstanceMetadata {
+
+	private String context;
+
+	public XArchInstanceMetadata(String context) {
+		this.context = context;
+	}
+	
+	/**
+	 * Returns the current context in which the element was last created in, 
+	 * recontextualized, or promoted to, or <code>null</code> if none exists.
+	 * @return Returns the current context of the element, or <code>null</code> if none exists.
+	 */
+	public String getCurrentContext() {
+		return context;
+	}
+}

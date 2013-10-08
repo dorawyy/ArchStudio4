@@ -1,0 +1,17 @@
+package $$(PACKAGE_NAME);
+
+import java.util.Collection;
+import edu.uci.isr.xarch.XArchActionMetadata;
+import edu.uci.isr.xarch.XArchTypeMetadata;
+import edu.uci.isr.xarch.XArchPropertyMetadata;
+
+/**
+ * Interface for accessing objects of the
+ * $$(TYPE_NAME) <code>xsi:type</code> in the
+ * $$(PACKAGE_TITLE) namespace.  Extends and
+ * inherits the properties of the
+ * $$(BASE_TYPE_NAME) <code>xsi:type</code>.
+ * 
+ * @author xArch apigen
+ */
+public interface $$(TYPE_INTERFACE_NAME) extends $$(BASE_TYPE_INTERFACE_NAME), edu.uci.isr.xarch.IXArchElement{

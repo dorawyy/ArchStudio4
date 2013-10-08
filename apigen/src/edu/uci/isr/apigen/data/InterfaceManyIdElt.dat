@@ -1,0 +1,17 @@
+	/**
+	 * Gets the $$(ELT_NAME) from this $$(TYPE_NAME) with the given
+	 * id.
+	 * @param id ID to look for.
+	 * @return $$(ELT_NAME) with the given ID, or <code>null</code> if not found.
+	 */
+	public $$(ELT_TYPE_INTERFACE_NAME) get$$(ELT_NAME_CAPPED)(String id);
+
+	/**
+	 * Gets the $$(ELT_NAME)s from this $$(TYPE_NAME) with the given
+	 * ids.
+	 * @param ids ID to look for.
+	 * @return $$(ELT_NAME)s with the given IDs.  If an element with a given
+	 * ID was not found, that ID is ignored.
+	 */
+	public Collection get$$(ELT_NAME_CAPPED)s(Collection ids);
+

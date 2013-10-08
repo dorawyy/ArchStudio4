@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/apigen/src/edu/uci/isr/apigen/ApiGen.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="edu.uci.isr.apigen.ApiGen"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-auto &quot;${resource_loc:/apigen/res/mixin/bin/xadl20.settings}&quot; &#13;&#10;-out &quot;${resource_loc:/edu.uci.isr.xarchlibs.apigen/src}&quot;&#13;&#10;-remap http://www.isr.uci.edu/projects/xarchuci/ext &quot;${resource_loc:/edu.uci.isr.xarchlibs/res/schema}&quot;&#13;&#10;-remap http://www.isr.uci.edu/projects/xarchuci/core &quot;${resource_loc:/edu.uci.isr.xarchlibs/res/schema/core}&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="apigen"/>
+</launchConfiguration>

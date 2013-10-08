@@ -1,0 +1,74 @@
+	/**
+	 * Set the $$(ATTR_NAME) attribute on this object.
+	 * @param $$(ATTR_NAME) attribute value.
+	 */
+	public void set$$(ATTR_NAME_CAPPED)(String $$(ATTR_NAME)){
+		{
+			String oldValue = get$$(ATTR_NAME_CAPPED)();
+			if(oldValue == null ? $$(ATTR_NAME) == null : oldValue.equals($$(ATTR_NAME)))
+				return;
+			DOMUtils.removeAttribute(elt, $$(ATTR_NAMESPACE), $$(ATTR_NAME_VARNAME));
+			IXArch _x = getXArch();
+			if(_x != null){
+				_x.fireXArchEvent(
+					new XArchEvent(this, 
+					XArchEvent.CLEAR_EVENT,
+					XArchEvent.ATTRIBUTE_CHANGED,
+					"$$(ATTR_NAME)", oldValue,
+					XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this), true)
+				);
+			}
+		}
+		DOMUtils.setAttribute(elt, $$(ATTR_NAMESPACE), $$(ATTR_NAME_VARNAME), $$(ATTR_NAME));
+		IXArch _x = getXArch();
+		if(_x != null){
+			_x.fireXArchEvent(
+				new XArchEvent(this, 
+				XArchEvent.SET_EVENT,
+				XArchEvent.ATTRIBUTE_CHANGED,
+				"$$(ATTR_NAME)", $$(ATTR_NAME),
+				XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+			);
+		}
+	}
+		
+	/**
+	 * Removes the $$(ATTR_NAME) attribute from this object.
+	 */
+	public void clear$$(ATTR_NAME_CAPPED)(){
+		String oldValue = get$$(ATTR_NAME_CAPPED)();
+		if(oldValue == null)
+			return;
+		DOMUtils.removeAttribute(elt, $$(ATTR_NAMESPACE), $$(ATTR_NAME_VARNAME));
+		IXArch _x = getXArch();
+		if(_x != null){
+			_x.fireXArchEvent(
+				new XArchEvent(this, 
+				XArchEvent.CLEAR_EVENT,
+				XArchEvent.ATTRIBUTE_CHANGED,
+				"$$(ATTR_NAME)", oldValue,
+				XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+			);
+		}
+	}
+	
+	/**
+	 * Gets the value of the $$(ATTR_NAME) attribute on this object.
+	 * @return $$(ATTR_NAME) attribute's value or <code>null</code> if that
+	 * attribute is not set.
+	 */
+	public String get$$(ATTR_NAME_CAPPED)(){
+		return DOMUtils.getAttributeValue(elt, $$(ATTR_NAMESPACE), $$(ATTR_NAME_VARNAME));
+	}
+	
+	/**
+	 * Determines if this object's $$(ATTR_NAME) attribute has the
+	 * given value.
+	 * @param $$(ATTR_NAME) value to test.
+	 * @return <code>true</code> if the values match, <code>false</code> otherwise.
+	 * Matching is done by string-matching.
+	 */
+	public boolean has$$(ATTR_NAME_CAPPED)(String $$(ATTR_NAME)){
+		return DOMUtils.objNullEq(get$$(ATTR_NAME_CAPPED)(), $$(ATTR_NAME));
+	}
+

@@ -1,0 +1,2 @@
+			hasAll$$(ELT_NAME_CAPPED)s(c.getAll$$(ELT_NAME_CAPPED)s()) &&
+			c.hasAll$$(ELT_NAME_CAPPED)s(getAll$$(ELT_NAME_CAPPED)s()) &&

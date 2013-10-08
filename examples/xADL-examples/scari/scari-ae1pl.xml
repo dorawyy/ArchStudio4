@@ -1,0 +1,2371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance:xArch xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:boolguard="http://www.ics.uci.edu/pub/arch/xArch/boolguard.xsd" xmlns:hints3="http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd" xmlns:options="http://www.ics.uci.edu/pub/arch/xArch/options.xsd" xmlns:statecharts="http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/boolguard.xsd http://www.isr.uci.edu/projects/xarchuci/ext/boolguard.xsd http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd http://tps.ics.uci.edu/svn/projects/apigen4/trunk/apigen-schema/res/schema/statecharts.xsd http://www.ics.uci.edu/pub/arch/xArch/options.xsd http://www.isr.uci.edu/projects/xarchuci/ext/options.xsd http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints3.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd">
+<types:archStructure types:id="radio" xsi:type="types:ArchStructure">
+<types:description xsi:type="instance:Description">Radio-Main</types:description>
+<types:component types:id="node$node1_node" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">Node1_DCD (node1)</types:description>
+<types:interface types:id="ifaceuid-1162332301797-55" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#siguid-1162332301787-54" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301827-66" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#siguid-1162332301827-65" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301897-90" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#siguid-1162332301887-89" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301937-113" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">servicePort Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#siguid-1162332301937-112" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:type xlink:href="#node$node1_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="node$node2_node" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">Node2_DCD (node2)</types:description>
+<types:interface types:id="ifaceuid-1162332301777-52" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#siguid-1162332301767-51" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301827-63" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#siguid-1162332301827-62" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301887-87" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">servicePort Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#siguid-1162332301887-86" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:interface types:id="ifaceuid-1162332301937-116" xsi:type="options:OptionalInterface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) Node Interface</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#siguid-1162332301937-115" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:interface>
+<types:type xlink:href="#node$node2_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:connector types:id="connector-uid-1162332301797-57" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">EchoResource1ToChorusResource1</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301797-58" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301797-59" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301827-68" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">ChorusResource1ToNode1Audio</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301827-69" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301827-70" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301897-92" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">Controller1ToNode2AudioDevice</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301897-93" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301897-94" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301947-118" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">ChorusResource1ToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301947-119" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301947-120" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:link types:id="link-uid-1162332301797-60" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301797-55" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301797-58" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301807-61" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301797-59" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301777-52" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301837-71" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301827-66" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301827-69" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301837-72" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Interface</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301827-70" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301827-63" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301897-95" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control) Node Interface to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301897-90" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301897-93" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301897-96" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort Node Interface</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301897-94" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301887-87" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301947-121" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) Node Interface to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301937-116" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301947-119" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301947-122" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort Node Interface</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301947-120" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#ifaceuid-1162332301937-113" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+</types:archStructure>
+<hints3:renderingHints3 xsi:type="hints3:RenderingHints3">
+<hints3:hintedElement hints3:maintainer="edu.uci.isr.archstudio4.comp.archipelago" xsi:type="hints3:HintBundle" hints3:type="XML" hints3:version="4.0.0">
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#node$node1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:B6C3F70D-A069-47B5-BCEA-708E51C01650" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:FD381958-5357-4981-8D53-2C8CE178657A" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:C7FAF6C6-08E4-478E-80E4-4FAF0553B2FB" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301296-3" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301326-8" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301336-13" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301346-18" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="230,191,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="230,191,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="230,191,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301737-41" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301757-46" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301877-81" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301907-97" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301917-102" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301927-107" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#node$node2" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#node2Logger_DCE:597135DF-8305-44A6-8965-8A0CEACB07D3" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:91418885-5C11-493B-9A9F-F17FCEF2F3CB" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:6BEB079C-28B4-410F-B503-8BEB01983658" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="197,203,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301367-23" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301377-28" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301387-33" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="255,234,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="230,191,255" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301837-73" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#radio" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301797-57" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301827-68" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301897-92" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+<hints3:hintedElement xsi:type="hints3:HintedElement">
+<hints3:target xlink:href="#connector-uid-1162332301947-118" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<hints3:property hints3:name="boxColor" xsi:type="hints3:Property">
+<hints3:value hints3:data="209,255,191" xsi:type="hints3:PropertyValue" hints3:type="org.eclipse.swt.graphics.RGB"/>
+</hints3:property>
+</hints3:hintedElement>
+</hints3:hintedElement>
+</hints3:hintedElement>
+</hints3:renderingHints3>
+<types:archStructure types:id="node$node1" xsi:type="types:ArchStructure">
+<types:description xsi:type="instance:Description">Node1_DCD (node1)</types:description>
+<types:component types:id="DCE:1EC3CC30-5DE0-4671-91EB-3201C3FB9238" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node1DeviceManager</types:description>
+<types:interface types:id="DCE:1EC3CC30-5DE0-4671-91EB-3201C3FB9238$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:1EC3CC30-5DE0-4671-91EB-3201C3FB9238$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:B6C3F70D-A069-47B5-BCEA-708E51C01650" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">domainManager</types:description>
+<types:interface types:id="DCE:B6C3F70D-A069-47B5-BCEA-708E51C01650$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:B6C3F70D-A069-47B5-BCEA-708E51C01650$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:FD381958-5357-4981-8D53-2C8CE178657A" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node1Logger_DCE:FD381958-5357-4981-8D53-2C8CE178657A</types:description>
+<types:interface types:id="anonService_uid-1162332301276-1_iface" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">servicePort</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#anonService_uid-1162332301276-0_sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:23B4764E-AD69-4353-8B3E-CBF6F779D51E_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:C7FAF6C6-08E4-478E-80E4-4FAF0553B2FB" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node1ExecutableDevice</types:description>
+<types:interface types:id="DCE:C7FAF6C6-08E4-478E-80E4-4FAF0553B2FB$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:C7FAF6C6-08E4-478E-80E4-4FAF0553B2FB$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node1AudioDevice</types:description>
+<types:interface types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$AudioOut$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$AudioIn$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioIn$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$AudioOut$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="anonService_uid-1162332301867-79_iface" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">servicePort</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#anonService_uid-1162332301857-78_sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD" xsi:type="options:OptionalComponent">
+<types:description xsi:type="instance:Description">echoResource1</types:description>
+<types:interface types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioOut$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioIn$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioIn$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioOut$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:component>
+<types:component types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0" xsi:type="options:OptionalComponent">
+<types:description xsi:type="instance:Description">chorusResource1</types:description>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$AudioOut$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$AudioIn$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioIn$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$AudioOut$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:component>
+<types:component types:id="DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336" xsi:type="options:OptionalComponent">
+<types:description xsi:type="instance:Description">AudioEffectController1</types:description>
+<types:interface types:id="DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$AudioInControl$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioInControl [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$AudioInControl$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$AudioOutControl$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$AudioOutControl$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:component>
+<types:connector types:id="connector-uid-1162332301296-3" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node1DeviceManagerToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301306-4" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301306-5" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301326-8" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node1ExecutableDeviceToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301326-9" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301326-10" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301336-13" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node1AudioDeviceToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301336-14" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301336-15" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301346-18" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">domainManagerToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301357-19" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301357-20" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301737-41" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">node1AudioToEchoResource1</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301737-42" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301737-43" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301757-46" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">EchoResource1ToChorusResource1</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301757-47" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301757-48" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301877-81" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">Controller1ToNode1AudioDevice</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301877-82" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301877-83" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301907-97" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">AudioEffectApplication1ToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301907-98" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301907-99" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301917-102" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">EchoResource1ToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301917-103" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301917-104" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301927-107" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">ChorusResource1ToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301927-108" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301927-109" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:link types:id="link-uid-1162332301306-6" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:1EC3CC30-5DE0-4671-91EB-3201C3FB9238$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301306-4" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301316-7" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301306-5" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301326-11" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:C7FAF6C6-08E4-478E-80E4-4FAF0553B2FB$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301326-9" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301326-12" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301326-10" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301346-16" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301336-14" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301346-17" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301336-15" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301357-21" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:B6C3F70D-A069-47B5-BCEA-708E51C01650$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301357-19" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301357-22" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301357-20" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301737-44" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:A68A5812-6BE7-4920-9A29-A7C013734FAB$AudioOut$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301737-42" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301747-45" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301737-43" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioIn$in" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301757-49" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioOut$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301757-47" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301767-50" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301757-48" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$AudioIn$in" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301877-84" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioInControl [IDL:CF/Port:1.0] (control) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$AudioInControl$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301877-82" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301877-85" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301877-83" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301867-79_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301907-100" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301907-98" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301907-101" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301907-99" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301917-105" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301917-103" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301917-106" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301917-104" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301937-110" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301927-108" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301937-111" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301927-109" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+</types:archStructure>
+<types:archTypes xsi:type="types:ArchTypes">
+<types:componentType types:id="DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariDeviceManager</types:description>
+<types:signature types:id="DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariDomainManager</types:description>
+<types:signature types:id="DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:305CCD21-C9A9-4738-9C81-BA0B24745CEA_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="DCE:23B4764E-AD69-4353-8B3E-CBF6F779D51E_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariLogService</types:description>
+<types:signature types:id="anonService_uid-1162332301276-0_sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">servicePort signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariExecutableDevice</types:description>
+<types:signature types:id="DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariAudioDevice</types:description>
+<types:signature types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioIn$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+<types:signature types:id="DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+<types:signature types:id="anonService_uid-1162332301857-78_sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">servicePort signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="node$node1_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">Node1_DCD (node1) Type</types:description>
+<types:signature types:id="siguid-1162332301787-54" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301827-65" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301887-89" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301937-112" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">servicePort Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:subArchitecture xsi:type="types:SubArchitecture">
+<types:archStructure xlink:href="#node$node1" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:signatureInterfaceMapping types:id="simuid-1162332301797-56" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301787-54" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:AB385FCA-C452-429B-8A15-BF11C4608FFD$AudioOut$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301827-67" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301827-65" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$0$AudioOut$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301897-91" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301887-89" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:0CA5B267-30C8-4AF6-8F24-C8A4BCC1D336$AudioOutControl$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301937-114" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">servicePort Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301937-112" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#anonService_uid-1162332301276-1_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+</types:subArchitecture>
+</types:componentType>
+<types:componentType types:id="node$node2_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">Node2_DCD (node2) Type</types:description>
+<types:signature types:id="siguid-1162332301767-51" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301827-62" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301887-86" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">servicePort Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:signature types:id="siguid-1162332301937-115" xsi:type="options:OptionalSignature">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) Node Signature</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signature>
+<types:subArchitecture xsi:type="types:SubArchitecture">
+<types:archStructure xlink:href="#node$node2" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:signatureInterfaceMapping types:id="simuid-1162332301777-53" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301767-51" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$AudioIn$in" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301827-64" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301827-62" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:6BEB079C-28B4-410F-B503-8BEB01983658$AudioIn$in" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node1""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301887-88" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">servicePort Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301887-86" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#anonService_uid-1162332301867-80_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+<types:signatureInterfaceMapping types:id="simuid-1162332301937-117" xsi:type="options:OptionalSignatureInterfaceMapping">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) Node Connection</types:description>
+<types:outerSignature xlink:href="#siguid-1162332301937-115" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<types:innerInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:signatureInterfaceMapping>
+</types:subArchitecture>
+</types:componentType>
+<types:componentType types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariAudioEchoResource</types:description>
+<types:signature types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioIn$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+<types:signature types:id="DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+</types:componentType>
+<types:componentType types:id="DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type" xsi:type="types:ComponentType">
+<types:description xsi:type="instance:Description">scariAudioEffectAssemblyController</types:description>
+<types:signature types:id="DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$LogPort$in$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:signature>
+<types:signature types:id="DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$LogPort$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+<types:signature types:id="DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$AudioInControl$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioInControl [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+<types:signature types:id="DCE:035AD29F-232F-4047-B887-90BA8D610C4B_type$AudioOutControl$out$sig" xsi:type="types:Signature">
+<types:description xsi:type="instance:Description">AudioOutControl [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:signature>
+</types:componentType>
+</types:archTypes>
+<types:archStructure types:id="node$node2" xsi:type="types:ArchStructure">
+<types:description xsi:type="instance:Description">Node2_DCD (node2)</types:description>
+<types:component types:id="DCE:6D27B294-F8B8-4237-9357-DF6726CDA247" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node2DeviceManager</types:description>
+<types:interface types:id="DCE:6D27B294-F8B8-4237-9357-DF6726CDA247$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:6D27B294-F8B8-4237-9357-DF6726CDA247$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:2FB49F98-FF98-4AFE-9A17-CF093360E7E0_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="node2Logger_DCE:597135DF-8305-44A6-8965-8A0CEACB07D3" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node2Logger_DCE:597135DF-8305-44A6-8965-8A0CEACB07D3</types:description>
+<types:interface types:id="anonService_uid-1162332301276-2_iface" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">servicePort</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#anonService_uid-1162332301276-0_sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:23B4764E-AD69-4353-8B3E-CBF6F779D51E_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:91418885-5C11-493B-9A9F-F17FCEF2F3CB" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node2ExecutableDevice</types:description>
+<types:interface types:id="DCE:91418885-5C11-493B-9A9F-F17FCEF2F3CB$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:91418885-5C11-493B-9A9F-F17FCEF2F3CB$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:CDA26448-0D3B-4D63-9ABF-46AF28BBCE3F_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658" xsi:type="types:Component">
+<types:description xsi:type="instance:Description">node2AudioDevice</types:description>
+<types:interface types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658$AudioOut$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658$AudioIn$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioIn$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:6BEB079C-28B4-410F-B503-8BEB01983658$AudioOut$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type$AudioOut$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="anonService_uid-1162332301867-80_iface" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">servicePort</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#anonService_uid-1162332301857-78_sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:4393BC84-EF9F-4B50-9C4E-5704C39F2B35_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:component>
+<types:component types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1" xsi:type="options:OptionalComponent">
+<types:description xsi:type="instance:Description">chorusResource1</types:description>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$LogPort$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$AudioOut$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:CF/Port:1.0] (control)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$AudioIn$in" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioIn$in$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$LogPort$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$LogPort$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:interface types:id="DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$AudioOut$out" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+<types:signature xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type$AudioOut$out$sig" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:interface>
+<types:type xlink:href="#DCE:FB9277B4-1279-4A9B-945F-49A31995D7B3_type" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:component>
+<types:connector types:id="connector-uid-1162332301367-23" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node2DeviceManagerToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301367-24" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301367-25" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301377-28" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node2ExecutableDeviceToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301377-29" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301377-30" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301387-33" xsi:type="types:Connector">
+<types:description xsi:type="instance:Description">node2AudioDeviceToLog</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301387-34" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301387-35" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+</types:connector>
+<types:connector types:id="connector-uid-1162332301837-73" xsi:type="options:OptionalConnector">
+<types:description xsi:type="instance:Description">ChorusResource1ToNode1Audio</types:description>
+<types:interface types:id="connectorProvides-uid-1162332301837-74" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorProvides</types:description>
+<types:direction xsi:type="instance:Direction">in</types:direction>
+</types:interface>
+<types:interface types:id="connectorUses-uid-1162332301837-75" xsi:type="types:Interface">
+<types:description xsi:type="instance:Description">connectorUses</types:description>
+<types:direction xsi:type="instance:Direction">out</types:direction>
+</types:interface>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:connector>
+<types:link types:id="link-uid-1162332301367-26" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:6D27B294-F8B8-4237-9357-DF6726CDA247$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301367-24" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301367-27" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301367-25" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-2_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301377-31" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:SCA/LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:91418885-5C11-493B-9A9F-F17FCEF2F3CB$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301377-29" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301377-32" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301377-30" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-2_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301387-36" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">LogPort [IDL:LogService/Log:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:6BEB079C-28B4-410F-B503-8BEB01983658$LogPort$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301387-34" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301397-37" xsi:type="types:Link">
+<types:description xsi:type="instance:Description">connectorUses to servicePort</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301387-35" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#anonService_uid-1162332301276-2_iface" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+</types:link>
+<types:link types:id="link-uid-1162332301837-76" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">AudioOut [IDL:PushPorts/OctetSeqConsumer:1.0] (data) to connectorProvides</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:7FD2A02D-4D13-46B4-A2CF-7107B25533EA$1$AudioOut$out" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorProvides-uid-1162332301837-74" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+<types:link types:id="link-uid-1162332301857-77" xsi:type="options:OptionalLink">
+<types:description xsi:type="instance:Description">connectorUses to AudioIn [IDL:PushPorts/OctetSeqConsumer:1.0] (data)</types:description>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#connectorUses-uid-1162332301837-75" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<types:point xsi:type="instance:Point">
+<instance:anchorOnInterface xlink:href="#DCE:6BEB079C-28B4-410F-B503-8BEB01983658$AudioIn$in" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</types:point>
+<options:optional xsi:type="options:Optional">
+<options:guard xsi:type="boolguard:BooleanGuard">
+<boolguard:booleanExp xsi:type="boolguard:BooleanExp">
+<boolguard:and xsi:type="boolguard:And">
+<boolguard:booleanExp1 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">state</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">"AudioEffect1XRelaxed"</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp1>
+<boolguard:booleanExp2 xsi:type="boolguard:BooleanExp">
+<boolguard:equals xsi:type="boolguard:Equals">
+<boolguard:symbol xsi:type="boolguard:Symbol">chorusResource1_host</boolguard:symbol>
+<boolguard:value xsi:type="boolguard:Value">""node$node2""</boolguard:value>
+</boolguard:equals>
+</boolguard:booleanExp2>
+</boolguard:and>
+</boolguard:booleanExp>
+</options:guard>
+</options:optional>
+</types:link>
+</types:archStructure>
+<statecharts:statechart statecharts:id="main-statechart" xsi:type="statecharts:Statechart">
+<statecharts:description xsi:type="instance:Description">main</statecharts:description>
+<statecharts:state statecharts:id="[initial]" statecharts:stateType="initial" xsi:type="statecharts:State">
+<statecharts:description xsi:type="instance:Description">[Initial State]</statecharts:description>
+</statecharts:state>
+<statecharts:state statecharts:id="hwonly" statecharts:stateType="state" xsi:type="statecharts:State">
+<statecharts:description xsi:type="instance:Description">Drivers Loaded</statecharts:description>
+</statecharts:state>
+<statecharts:state statecharts:id="AudioEffect1_Relaxed" statecharts:stateType="state" xsi:type="statecharts:State">
+<statecharts:description xsi:type="instance:Description">Waveform AudioEffect1_Relaxed Loaded</statecharts:description>
+</statecharts:state>
+<statecharts:state statecharts:id="[final]" statecharts:stateType="final" xsi:type="statecharts:State">
+<statecharts:description xsi:type="instance:Description">[Final State]</statecharts:description>
+</statecharts:state>
+<statecharts:transition statecharts:id="uid-1162332301427-38" xsi:type="statecharts:Transition">
+<statecharts:description xsi:type="instance:Description">transition</statecharts:description>
+<statecharts:fromState xlink:href="#[initial]" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<statecharts:toState xlink:href="#hwonly" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</statecharts:transition>
+<statecharts:transition statecharts:id="uid-1162332301437-39" xsi:type="statecharts:Transition">
+<statecharts:description xsi:type="instance:Description">transition</statecharts:description>
+<statecharts:fromState xlink:href="#hwonly" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<statecharts:toState xlink:href="#AudioEffect1_Relaxed" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</statecharts:transition>
+<statecharts:transition statecharts:id="uid-1162332301437-40" xsi:type="statecharts:Transition">
+<statecharts:description xsi:type="instance:Description">transition</statecharts:description>
+<statecharts:fromState xlink:href="#AudioEffect1_Relaxed" xsi:type="instance:XMLLink" xlink:type="simple"/>
+<statecharts:toState xlink:href="#[final]" xsi:type="instance:XMLLink" xlink:type="simple"/>
+</statecharts:transition>
+</statecharts:statechart>
+</instance:xArch>

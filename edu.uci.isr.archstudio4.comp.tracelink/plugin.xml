@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Tracelink View"
+            icon="res/icons/archstudio-icon-16x16.png"
+            category="edu.uci.isr.archstudio4.views"
+            class="edu.uci.isr.archstudio4.comp.tracelink.views.layouts.TracelinkSidebarViewPart"
+            id="edu.uci.isr.archstudio4.comp.tracelink">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="edu.uci.isr.archstudio4.comp.tracelink.views.layouts.TracelinkSidebarViewPart">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

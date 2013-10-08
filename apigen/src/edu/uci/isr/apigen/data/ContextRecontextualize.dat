@@ -1,0 +1,23 @@
+	/**
+	 * Brings an $$(TYPE_INTERFACE_NAME) object created in another
+	 * context into this context.
+	 * @param value Object to recontextualize.
+	 * @return <code>value</code> object in this namespace.
+	 */
+	public $$(TYPE_INTERFACE_NAME) recontextualize$$(TYPE_NAME_CAPPED)($$(TYPE_INTERFACE_NAME) value){
+		if(!(value instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot process non-DOM based xArch entities.");
+		}
+		Element elt = (Element)((DOMBased)value).getDOMNode();
+
+		elt = DOMUtils.cloneAndRename(elt, doc, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, elt.getLocalName());
+		//elt = DOMUtils.cloneAndRename(elt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, elt.getTagName());
+
+		//Removed next line because it causes an illegal character DOM exception
+		//elt.setPrefix(null);
+
+		((DOMBased)value).setDOMNode(elt);
+		((IXArchElement)value).setXArch(this.getXArch());
+		return value;
+	}
+

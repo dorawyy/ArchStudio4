@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Myx Eclipse PDE Plug-in
+Bundle-SymbolicName: edu.uci.isr.myx.fw.eclipse.pde
+Bundle-Version: 4.1.50.qualifier
+Bundle-Vendor: Institute for Software Research
+Export-Package: edu.uci.isr.myx2.eclipse.extension.pde
+Require-Bundle: edu.uci.isr.myx.fw,
+ edu.uci.isr.myx.fw.eclipse,
+ org.eclipse.pde.core,
+ edu.uci.isr.utils.eclipse.pde,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

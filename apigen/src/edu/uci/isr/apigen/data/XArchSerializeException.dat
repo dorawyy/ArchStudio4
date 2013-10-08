@@ -1,0 +1,47 @@
+package edu.uci.isr.xarch;
+
+/**
+ * This exception is thrown when serializing an xArch-based document to
+ * a persistent representation fails.  In general, the chained exception
+ * (e.g., from the real serializer) contains the actual failure data.
+ * 
+ * @author Eric M. Dashofy <a href="mailto:edashofy@ics.uci.edu">edashofy@ics.uci.edu</a>
+ */
+public class XArchSerializeException extends Exception{
+
+	/**
+	 * Create a new xArch serialization exception with no explanation and no
+	 * chained exception.
+	 */
+	public XArchSerializeException() {
+		super();
+	}
+	
+	/**
+	 * Create a new xArch serialization exception with the given explanation
+	 * @param description Explanation for the serialization failure.
+	 */
+	public XArchSerializeException(String description){
+		super(description);
+	}
+
+	/**
+	 * Create a new xArch serialization exception based on the given error
+	 * that caused this exception.
+	 * @param t The underlying error that caused this exception.
+	 */
+	public XArchSerializeException(Throwable t){
+		super(t);
+	}
+
+	/**
+	 * Create a new xArch serialization exception based on an explanation and
+	 * the given error that caused this exception.
+	 * @param description Explanation for the serialization failure.
+	 * @param t The underlying error that caused this exception.
+	 */
+	public XArchSerializeException(String description, Throwable t){
+		super(description, t);
+	}
+
+}

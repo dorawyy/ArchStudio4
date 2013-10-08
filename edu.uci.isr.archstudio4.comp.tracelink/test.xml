@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_05" class="java.beans.XMLDecoder"> 
+ <object class="edu.uci.isr.archstudio4.comp.tracelink.analysis.SimpleRuleObject"> 
+  <void property="antecedents"> 
+   <array class="edu.uci.isr.archstudio4.comp.tracelink.analysis.IRulePart" length="3"> 
+    <void index="0"> 
+     <object id="SimpleRulePart0" class="edu.uci.isr.archstudio4.comp.tracelink.analysis.SimpleRulePart"> 
+      <void property="archObject"> 
+       <string>TraceEndpoint</string> 
+      </void> 
+      <void property="command"> 
+       <string>getLocationHref</string> 
+      </void> 
+      <void property="parameters"> 
+       <array class="java.lang.String" length="1"> 
+        <void index="0"> 
+         <string>.pdf</string> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="referencedRules"> 
+       <array id="IRulePartArray0" class="edu.uci.isr.archstudio4.comp.tracelink.analysis.IRulePart" length="0"/> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="1"> 
+     <object id="SimpleRulePart1" class="edu.uci.isr.archstudio4.comp.tracelink.analysis.SimpleRulePart"> 
+      <void property="archObject"> 
+       <string>TraceEndpoint</string> 
+      </void> 
+      <void property="command"> 
+       <string>getLocationHref</string> 
+      </void> 
+      <void property="parameters"> 
+       <array class="java.lang.String" length="1"> 
+        <void index="0"> 
+         <string>.doc</string> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="referencedRules"> 
+       <object idref="IRulePartArray0"/> 
+      </void> 
+     </object> 
+    </void> 
+    <void index="2"> 
+     <object class="edu.uci.isr.archstudio4.comp.tracelink.analysis.SimpleRulePart"> 
+      <void property="archObject"> 
+       <string>TraceEndpoint</string> 
+      </void> 
+      <void property="command"> 
+       <string>getLocationHref</string> 
+      </void> 
+      <void property="parameters"> 
+       <array class="java.lang.String" length="1"> 
+        <void index="0"> 
+         <string>.xml</string> 
+        </void> 
+       </array> 
+      </void> 
+      <void property="referencedRules"> 
+       <object idref="IRulePartArray0"/> 
+      </void> 
+     </object> 
+    </void> 
+   </array> 
+  </void> 
+  <void property="consequent"> 
+   <object class="edu.uci.isr.archstudio4.comp.tracelink.analysis.SimpleRulePart"> 
+    <void property="archObject"> 
+     <string>TraceLink</string> 
+    </void> 
+    <void property="command"> 
+     <string>setDescription</string> 
+    </void> 
+    <void property="parameters"> 
+     <array class="java.lang.String" length="1"> 
+      <void index="0"> 
+       <string>Requirements_Link</string> 
+      </void> 
+     </array> 
+    </void> 
+    <void property="referencedRules"> 
+     <array class="edu.uci.isr.archstudio4.comp.tracelink.analysis.IRulePart" length="2"> 
+      <void index="0"> 
+       <object idref="SimpleRulePart0"/> 
+      </void> 
+      <void index="1"> 
+       <object idref="SimpleRulePart1"/> 
+      </void> 
+     </array> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

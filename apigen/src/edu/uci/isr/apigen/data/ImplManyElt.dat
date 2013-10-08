@@ -1,0 +1,150 @@
+	public void add$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) new$$(ELT_NAME_CAPPED)){
+		if(!(new$$(ELT_NAME_CAPPED) instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot handle non-DOM-based xArch entities.");
+		}
+		Element newChildElt = (Element)(((DOMBased)new$$(ELT_NAME_CAPPED)).getDOMNode());
+		newChildElt = DOMUtils.cloneAndRename(newChildElt, $$(ELEMENT_NS_SOURCE).NS_URI, $$(ELT_NAME_VARNAME));
+		((DOMBased)new$$(ELT_NAME_CAPPED)).setDOMNode(newChildElt);
+
+		synchronized(DOMUtils.getDOMLock(elt)){
+			elt.appendChild(newChildElt);
+			DOMUtils.order(elt, getSequenceOrder());
+		}
+
+		IXArch context = getXArch();
+		if(context != null){
+			context.fireXArchEvent(
+				new XArchEvent(this, 
+				XArchEvent.ADD_EVENT,
+				XArchEvent.ELEMENT_CHANGED,
+				"$$(ELT_NAME)", new$$(ELT_NAME_CAPPED),
+				XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+			);
+		}
+	}
+		
+	public void add$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)s){
+		for(Iterator en = $$(ELT_NAME)s.iterator(); en.hasNext(); ){
+			$$(ELT_TYPE_INTERFACE_NAME) elt = ($$(ELT_TYPE_INTERFACE_NAME))en.next();
+			add$$(ELT_NAME_CAPPED)(elt);
+		}
+	}		
+		
+	public void clear$$(ELT_NAME_CAPPED)s(){
+		//DOMUtils.removeChildren(elt, $$(ELEMENT_NS_SOURCE).NS_URI, $$(ELT_NAME_VARNAME));
+		Collection coll = getAll$$(ELT_NAME_CAPPED)s();
+		remove$$(ELT_NAME_CAPPED)s(coll);
+	}
+	
+	public void remove$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) $$(ELT_NAME)ToRemove){
+		if(!($$(ELT_NAME)ToRemove instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot handle non-DOM-based xArch entities.");
+		}
+		NodeList nl = DOMUtils.getChildren(elt, $$(ELEMENT_NS_SOURCE).NS_URI, $$(ELT_NAME_VARNAME));
+		for(int i = 0; i < nl.getLength(); i++){
+			Node n = nl.item(i);
+			if(n == ((DOMBased)$$(ELT_NAME)ToRemove).getDOMNode()){
+				synchronized(DOMUtils.getDOMLock(elt)){
+					elt.removeChild(n);
+				}
+
+				IXArch context = getXArch();
+				if(context != null){
+					context.fireXArchEvent(
+						new XArchEvent(this, 
+						XArchEvent.REMOVE_EVENT,
+						XArchEvent.ELEMENT_CHANGED,
+						"$$(ELT_NAME)", $$(ELT_NAME)ToRemove,
+						XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+					);
+				}
+
+				return;
+			}
+		}
+	}
+	
+	public void remove$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)s){
+		for(Iterator en = $$(ELT_NAME)s.iterator(); en.hasNext(); ){
+			$$(ELT_TYPE_INTERFACE_NAME) elt = ($$(ELT_TYPE_INTERFACE_NAME))en.next();
+			remove$$(ELT_NAME_CAPPED)(elt);
+		}
+	}
+	
+	public Collection getAll$$(ELT_NAME_CAPPED)s(){
+		NodeList nl = DOMUtils.getChildren(elt, $$(ELEMENT_NS_SOURCE).NS_URI, $$(ELT_NAME_VARNAME));
+		int nlLength = nl.getLength();
+		ArrayList v = new ArrayList(nlLength);
+		IXArch de = getXArch();
+		for(int i = 0; i < nlLength; i++){
+			Element el = (Element)nl.item(i);
+			boolean found = false;
+			if(de != null){
+				IXArchElement cachedXArchElt = de.getWrapper(el);
+				if(cachedXArchElt != null){
+					v.add(($$(ELT_TYPE_INTERFACE_NAME))cachedXArchElt);
+					found = true;
+				}
+			}
+			if(!found){
+				Object o = makeDerivedWrapper(el, "$$(ELT_TYPE_NAME)");	
+				if(o != null){
+					try{
+						((edu.uci.isr.xarch.IXArchElement)o).setXArch(getXArch());
+						if(de != null){
+							de.cacheWrapper(el, ((edu.uci.isr.xarch.IXArchElement)o));
+						}
+						v.add(($$(ELT_TYPE_INTERFACE_NAME))o);
+					}
+					catch(Exception e){
+						$$(ELT_TYPE_IMPL_NAME) eltImpl = new $$(ELT_TYPE_IMPL_NAME)((Element)nl.item(i));
+						eltImpl.setXArch(getXArch());
+						if(de != null){
+							de.cacheWrapper(el, ((edu.uci.isr.xarch.IXArchElement)eltImpl));
+						}
+						v.add(eltImpl);
+					}
+				}
+				else{
+					$$(ELT_TYPE_IMPL_NAME) eltImpl = new $$(ELT_TYPE_IMPL_NAME)((Element)nl.item(i));
+					eltImpl.setXArch(getXArch());
+					if(de != null){
+						de.cacheWrapper(el, ((edu.uci.isr.xarch.IXArchElement)eltImpl));
+					}
+					v.add(eltImpl);
+				}
+			}
+		}
+		return v;
+	}
+
+	public boolean has$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) $$(ELT_NAME)ToCheck){
+		Collection c = getAll$$(ELT_NAME_CAPPED)s();
+		
+		for(Iterator en = c.iterator(); en.hasNext(); ){
+			$$(ELT_TYPE_INTERFACE_NAME) elt = ($$(ELT_TYPE_INTERFACE_NAME))en.next();
+			if(elt.isEquivalent($$(ELT_NAME)ToCheck)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public Collection has$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)sToCheck){
+		Vector v = new Vector();
+		for(Iterator en = $$(ELT_NAME)sToCheck.iterator(); en.hasNext(); ){
+			$$(ELT_TYPE_INTERFACE_NAME) elt = ($$(ELT_TYPE_INTERFACE_NAME))en.next();
+			v.addElement(new Boolean(has$$(ELT_NAME_CAPPED)(elt)));
+		}
+		return v;
+	}
+		
+	public boolean hasAll$$(ELT_NAME_CAPPED)s(Collection $$(ELT_NAME)sToCheck){
+		for(Iterator en = $$(ELT_NAME)sToCheck.iterator(); en.hasNext(); ){
+			$$(ELT_TYPE_INTERFACE_NAME) elt = ($$(ELT_TYPE_INTERFACE_NAME))en.next();
+			if(!has$$(ELT_NAME_CAPPED)(elt)){
+				return false;
+			}
+		}
+		return true;
+	}

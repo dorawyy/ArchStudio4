@@ -1,0 +1,48 @@
+	/**
+	 * Promote an object of type <code>$$(BASE_TYPE_INTERFACE_NAME)</code>
+	 * to one of type <code>$$(TYPE_INTERFACE_NAME)</code>.  xArch APIs
+	 * are structured in such a way that a regular cast is not possible
+	 * to change interface types, so casting must be done through these
+	 * promotion functions.  If the <code>$$(BASE_TYPE_INTERFACE_NAME)</code>
+	 * object wraps a DOM element that is the base type, then the 
+	 * <code>xsi:type</code> of the base element is promoted.  Otherwise, 
+	 * it is left unchanged.
+	 *
+	 * This function also emits an <CODE>XArchEvent</CODE> with type
+	 * PROMOTE_TYPE.  The source for this events is the pre-promoted
+	 * IXArchElement object (should no longer be used), and the
+	 * target is the post-promotion object.  The target name is
+	 * the name of the interface class that was the target of the
+	 * promotion.
+	 * 
+	 * @param value Object to promote.
+	 * @return Promoted object.
+	 */
+	public $$(TYPE_INTERFACE_NAME) promoteTo$$(TYPE_NAME_CAPPED)(
+	$$(BASE_TYPE_INTERFACE_NAME) value){
+		if(!(value instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot process non-DOM based xArch entities.");
+		}
+		Element elt = (Element)((DOMBased)value).getDOMNode();
+
+		if(DOMUtils.hasXSIType(elt, 
+			$$(BASE_TYPE_IMPL_NAME).XSD_TYPE_NSURI,
+			$$(BASE_TYPE_IMPL_NAME).XSD_TYPE_NAME)){
+
+				DOMUtils.addXSIType(elt, $$(TYPE_IMPL_NAME).XSD_TYPE_NSURI, 
+					$$(TYPE_IMPL_NAME).XSD_TYPE_NAME);
+		}
+		$$(TYPE_IMPL_NAME) newElt = new $$(TYPE_IMPL_NAME)(elt);
+		newElt.setXArch(this.getXArch());
+
+		xArch.fireXArchEvent(
+			new XArchEvent(value, 
+			XArchEvent.PROMOTE_EVENT,
+			XArchEvent.ELEMENT_CHANGED,
+			$$(TYPE_INTERFACE_NAME).class.getName(), newElt,
+			XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, newElt))
+		);
+
+		return newElt;
+	}
+

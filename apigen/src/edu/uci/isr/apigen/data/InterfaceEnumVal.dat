@@ -1,0 +1,2 @@
+	/** Enumeration value for '$$(ENUM_VAL)' */
+	public static final String ENUM_$$(ENUM_VAL_VARNAME) = "$$(ENUM_VAL)";

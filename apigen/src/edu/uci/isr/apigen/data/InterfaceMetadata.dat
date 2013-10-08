@@ -1,0 +1,6 @@
+
+	public final static XArchTypeMetadata TYPE_METADATA = new XArchTypeMetadata(
+		XArchTypeMetadata.XARCH_ELEMENT,
+		"$$(TYPE_CONTEXT_NAME)", "$$(TYPE_NAME)", edu.uci.isr.xarch.IXArchElement.TYPE_METADATA,
+		new XArchPropertyMetadata[]{$$(PROPERTY_METADATA_ITEMS)},
+		new XArchActionMetadata[]{});

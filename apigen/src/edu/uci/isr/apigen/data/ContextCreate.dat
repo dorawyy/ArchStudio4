@@ -1,0 +1,12 @@
+	/**
+	 * Create an $$(TYPE_INTERFACE_NAME) object in this namespace.
+	 * @return New $$(TYPE_INTERFACE_NAME) object.
+	 */
+	public $$(TYPE_INTERFACE_NAME) create$$(TYPE_NAME_CAPPED)(){
+		Element elt = createElement(DEFAULT_ELT_NAME);
+		DOMUtils.addXSIType(elt, $$(TYPE_IMPL_NAME).XSD_TYPE_NSURI, $$(TYPE_IMPL_NAME).XSD_TYPE_NAME);
+		$$(TYPE_IMPL_NAME) newElt = new $$(TYPE_IMPL_NAME)(elt);
+		newElt.setXArch(this.getXArch());
+		return newElt;
+	}
+

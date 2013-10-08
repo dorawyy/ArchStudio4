@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="edu.uci.isr.myx2.eclipse.myxBrick">
+      <brick
+            baseJavaClass="edu.uci.isr.archstudio4.comp.aimeclipse.AbstractAIMEclipseMyxComponent"
+            defaultImplClass="edu.uci.isr.archstudio4.comp.aimeclipse.AIMEclipseMyxComponent"
+            id="edu.uci.isr.archstudio4.comp.aimeclipse.AIMEclipseMyxComponent"
+            name="AIMEclipseMyxComponent">
+         <parentBrick
+               parentBrickId="edu.uci.isr.archstudio4.comp.aim.AIMMyxComponent">
+         </parentBrick>
+      </brick>
+   </extension>
+
+</plugin>

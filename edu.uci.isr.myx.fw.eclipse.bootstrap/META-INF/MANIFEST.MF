@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Myx Eclipse Bootstrap Plug-in
+Bundle-SymbolicName: edu.uci.isr.myx.fw.eclipse.bootstrap;singleton:=true
+Bundle-Version: 4.1.50.qualifier
+Bundle-Activator: edu.uci.isr.myx.fw.eclipse.bootstrap.Activator
+Bundle-Vendor: Institute for Software Research
+Require-Bundle: edu.uci.isr.myx.fw,
+ org.eclipse.osgi,
+ edu.uci.isr.xarchflat.apigen,
+ edu.uci.isr.archstudio4.comp.aimeclipse,
+ edu.uci.isr.xadlutils
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy

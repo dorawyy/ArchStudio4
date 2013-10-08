@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         id=""
+         name=""
+         point="org.eclipse.jet.transform">
+      <transform 
+            startTemplate="templates/main.jet" 
+            templateLoaderClass="edu.uci.isr.myx2.eclipse.codegen.compiled._jet_transformation" 
+            >
+         <description></description>
+         <tagLibraries>
+            <importLibrary id="org.eclipse.jet.controlTags" usePrefix="c" autoImport="true"/>
+            <importLibrary id="org.eclipse.jet.javaTags" usePrefix="java" autoImport="true"/>
+            <importLibrary id="org.eclipse.jet.formatTags" usePrefix="f" autoImport="true"/>
+            <importLibrary id="org.eclipse.jet.workspaceTags" usePrefix="ws" autoImport="false"/>
+         </tagLibraries>
+      </transform>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="edu.uci.isr.myx2.eclipse.codegen.objectContribution1"
+            objectClass="org.eclipse.core.resources.IResource">
+         <action
+               class="edu.uci.isr.myx2.eclipse.codegen.ui.MyxCodegenAction"
+               id="edu.uci.isr.myx2.eclipse.codegen.action1"
+               label="Generate Myx Code Templates"
+               menubarPath="edu.uci.isr.myx2.eclipse.codegen.menu2/edu.uci.isr.myx2.eclipse.codegen.groupMarker1"
+               tooltip="Generates Myx-Brick code templates from plugin extensions.">
+         </action>
+         <menu
+               id="edu.uci.isr.myx2.eclipse.codegen.menu2"
+               label="Myx">
+            <groupMarker
+                  name="edu.uci.isr.myx2.eclipse.codegen.groupMarker1">
+            </groupMarker>
+         </menu>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="edu.uci.isr.archstudio4.ArchStudioPreferences"
+            class="edu.uci.isr.myx2.eclipse.codegen.ui.MyxCodegenPreferencePage"
+            id="edu.uci.isr.myx2.eclipse.codegen.MyxCodegenPreferencePage"
+            name="Myx Codegen">
+      </page>
+   </extension>
+</plugin>

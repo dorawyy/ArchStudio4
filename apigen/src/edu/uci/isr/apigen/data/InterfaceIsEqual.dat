@@ -1,0 +1,7 @@
+	/**
+	 * Determine if another $$(TYPE_NAME) has the same
+	 * id as this one.
+	 * @param $$(TYPE_NAME)ToCheck $$(TYPE_NAME) to compare with this
+	 * one.
+	 */
+	public boolean isEqual($$(TYPE_INTERFACE_NAME) $$(TYPE_NAME)ToCheck);

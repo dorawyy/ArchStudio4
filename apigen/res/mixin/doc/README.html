@@ -1,0 +1,285 @@
+<HTML>
+<HEAD><TITLE>README for Apigen Builds</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<PRE>
+-----------------------------------------------------------------------
+README for Apigen
+-----------------------------------------------------------------------
+
+TABLE OF CONTENTS
+
+1.    GENERAL USE NOTES
+  1.1    Starting Apigen
+  1.2    Running Apigen
+  1.3    Support for Fixed Attributes
+  1.4    Auto-generating based on existing settings
+
+2.    GUIDELINES FOR SCHEMA AUTHORS
+  2.1    Overview
+  2.2    Stylistic and other rules
+  2.3    Supported XML schema constructs
+
+3.    CONTACT INFORMATION
+
+-----------------------------------------------------------------------
+SECTION 1: GENERAL USE NOTES
+-----------------------------------------------------------------------
+1.1   Starting Apigen
+
+Apigen requires a virtual machine implementing Java 2, version 1.4 or
+better.  The de-facto implementation of such a VM is provided in the
+Java 2 SDK, version 1.4, which is available freely for many popular
+platforms at:
+
+http://java.sun.com/j2se/
+
+Install J2SDK1.4 (or equivalent) to run Apigen.
+
+Apigen is shipped in an executable JAR (Java Archive) file.  This
+JAR file (apigen.jar) is located in the lib/ directory of
+the apigen installation.  In many operating systems, you can simply 
+double-click the JAR file to run the application.  Otherwise, you 
+can perform the equivalent operation by running the following command 
+at the command-line:
+
+java -jar apigen.jar
+
+If that fails for some reason, you can invoke the main Apigen GUI
+by starting:
+
+java edu.uci.isr.apigen.gui.ApiGenGui
+
+This should start the main Apigen GUI.
+
+                            ----====*====----
+
+1.2   Running Apigen
+
+Running Apigen requires a significant amount of configuration, all
+of which can be saved in an Apigen settings file to make things 
+easier. Configuring Apigen requires setting up three key parameters:
+
+1.  A set of XML Schema to Location Mappings
+2.  A set of XML Schemas for which you want to generate libraries
+3.  A destination directory for the generated Java files
+
+Apigen ships with a settings file for the xADL 2.0 Architecture
+Description Language in the settings/ directory, called
+xADL20.settings.  If you load this settings file and walk through
+the Apigen wizard, you'll see that all the settings have already
+been filled out.  You can add to them or modify them as you walk
+through the wizard; however, your changes will not be saved unless
+you choose to save the settings again by clicking the "Save Settings"
+button in the last Apigen panel.
+
+*NOTE:  If you see a "Warning: Invalid Directory" message (or a
+similar message) when you load settings, it is because the target
+(output) directory for those settings is not accessible on the
+current machine.  You will be prompted to enter a valid directory
+when you get to that point in the Apigen wizard.
+
+When you run Apigen, you will be asked for each of these things in
+turn as you progress through the Apigen wizard.  They are described
+here:
+
+- XML Schema to Location Mappings -
+
+An XML schema is identified by its normative URI (Uniform Resource
+Identifier).  A URI is like a URL (Uniform Resource Locator) except
+that it does not necessarily indicate how to find the given resource,
+only how to name it.  So, for instance, a schema might have the URI:
+
+http://www.ics.uci.edu/pub/arch/xArch/instance.xsd
+
+but not actually reside at that location (in fact, this one does,
+but it's not a requirement).  The normative URI for the schema
+is specified in the targetNamespace attribute of the <schema>
+attribute in the file.
+
+Because schema locations can differ from their normative URIs, a
+mapping must be established between schema URIs and their actual
+locations.  The first Apigen wizard panel (after the welcome
+screen) asks you to establish a mapping between schema URIs and
+their locations.
+
+For each schema being processed (and for each schema referred
+to by those schemas), you should include an entry here.  You can
+specify the "real" location of a schema as either a file or a 
+publicly Internet-accessible URL.  URLs are preferred for the
+purpose of schema validation.
+
+Additionally, on this wizard panel, you'll see a checkbox labeled
+"Schema locations are 'official.'"  If this box is checked, the
+data binding libraries will be constructed with additional code
+to insert 'schemaLocation' attributes in XML instance documents.
+The schemaLocation attribute provides much the same mapping
+between schema URIs and their location for XML document validators.
+However, if these locations are temporary or only exist locally
+(i.e. files on a single machine), you should not check this box.
+As such, it's best to make all schemas available from an Internet-
+accessible URL.
+
+- XML Schemas for which You Want to Generate Libraries -
+
+The next Apigen wizard panel asks which schemas for which you 
+would like to generate libraries.  You may not want to generate
+libraries for each of the schemas specified in the previous
+panel, however it's generally a good idea to do this.  Enter
+all the schema URIs you wish to process here.
+
+- Library Destination Directory -
+
+The next panel allows you to select the directory where libraries
+will be generated.  You must have write access to this directory.
+
+- Generate Libraries Panel -
+
+The final panel of the Apigen wizard allows you to save the
+settings you've created so far in a settings file and then process
+the schemas.  Any problems or errors are reported during processing.
+
+                            ----====*====----
+
+1.3   Support for fixed attributes
+
+Apigen supports (since build 1022) the fixed="..." attribute for
+xsd:attributes.  If a fixed attribute value is specified, the generated
+get[AttributeName]() function will always return the fixed value as
+stated in the schema, no matter what attribute value is actually in
+the XML document (or if one is there at all).  Calling 
+set[AttributeName]() with a value other than the fixed value will
+throw a FixedValueException. If you want the fixed value to *actually
+appear* in the XML document, however (for processing by non-schema-
+aware tools that do not use the data binding library), you MUST call
+set[AttributeName]() with the fixed value to change the value.
+
+1.4   Auto-generating based on existing settings
+
+Once you've run through Apigen and created a settings file, it is 
+possible to run Apigen with no GUI based on the settings in that
+file.  The command-line is:
+
+java edu.uci.isr.apigen.ApiGen -auto filename
+
+Where filename is the name of the settings file to load.  Apigen
+will immediately begin processing schemas and generating data bindings,
+overwriting any files that happen to be in the target directory.
+
+-----------------------------------------------------------------------
+SECTION 2: GUIDELINES FOR SCHEMA AUTHORS
+-----------------------------------------------------------------------
+
+2.1   Overview
+
+Apigen was a tool developed out of necessity as there was no competent
+data binding generator for XML schemas available at the time of its
+development.  However, it was not meant to be a generic XML schema
+data binding generator, and therefore has restrictions above and 
+beyond that of a completely generic tool.  In general, two rules hold:
+
+a.  All Apigen-processable schemas are valid XML schemas.
+b.  Not all valid XML schemas are Apigen-processable.
+
+The restrictions that schemas must meet to be Apigen-processable are
+documented in following sections.
+
+                            ----====*====----
+
+2.2   Stylistic and Other Rules
+
+In general, it is good to follow certain stylistic constraints when
+writing XML schemas.  For instance, all xArch and xADL 2.0 schemas,
+to date, follow a single naming convention: Element names follow
+the same rules as Java object identifiers, starting with a lowercase
+letter and using uppercase letters to indicate the start of new
+words, such as:
+
+myElementName
+
+Type names, on the other hand, follow the same rules as Java class
+identifiers, starting with an uppercase letter and using uppercase
+letteres to indicate the start of new words, such as:
+
+MyComplexTypeName
+
+Following this convention, when possible, will ensure that generated
+data bindings don't suffer from Java syntax errors.
+
+Additional constraints or tips for writing schemas include:
+ - Don't use type or element names that correspond to Java reserved
+   words such as boolean or string.
+ - Make the filename of your schema a short, one-word name (with
+   the .xsd extension, of course) such as instance.xsd or types.xsd.
+ - Use only constructs specified as supported by Apigen (see next
+   section)
+ - When creating an object that is referred to by a unique identifier
+   (where the scope of 'unique' is within the same document), use an
+   attribute called 'id' and use the Identifier type from the
+   xArch instance schema as the attribute's type.  See the various
+   xADL 2.0 schemas for examples of this.
+ - In general, you should have one namespace per schema.  Redefinition
+   of elements in other namespaces is not supported, nor is adding
+   constructs to an existing namespace.
+
+                            ----====*====----
+
+2.3   Supported XML Schema Constructs
+
+Apigen does not support all XML Schema constructs.  However, it does
+support a significant and useful subset.  The constructs supported
+by Apigen are (namespace is xsd: except where specified):
+
+- <schema> tag, targetNamespace and xmlns attributes
+- <simpleType> tag.  All simple types in the data binding libraries
+  are treated as Strings, even if they are restricted to be enumerated
+  types or regular-expression based, etc.
+- Enumerations as restrictions of simple types are modeled as constant
+  Strings in the generated interfaces
+- <complexType> tag containing elements, attributes, or extending
+  an existing simple or complex type.  Complex type restrictions
+  are not supported if they reduce the cardiality of a 1+ element
+  to 0 or 0/1.
+- <sequence> and <choice> tags.  Note that mutual exclusivity
+  of <choice> tags is not specifically supported--that is, it
+  will be possible to add any of the elements in the <choice>
+  tag without affecting the others.  Tools are expected to
+  add only one.
+- <element> tag.  Names and types must be specified for each element.
+  Implicit types (types specified in-line) are not allowed.
+  Top-level elements (global elements declared outside a type
+  declaration) result in additional functions created in the various
+  Context objects to support their addition to an 'any' element
+  such as <xArch>
+- <attribute> tag.  Names and types must be specified for each 
+  attribute.
+- Attribute refs (partial support--your mileage may vary here)
+- Abstract elements
+
+A Non-Exhaustive list of currently UNsupported constructs:
+- Nil/Nillable items
+- Annotations/Documentation (ignored)
+- Element refs 
+- Substitution Groups
+- Element/Attribute Groups
+- schemaLocation attribute (supported in instance documents, ignored
+  in schema documents as Apigen provides explicit support)
+- Deriving complex types by restriction
+- Redefinition
+- ##any support (except in the single case of the top-level
+  <xArch> tag.
+- Implicitly defined types (e.g. a <complexType> subelement of an
+  <element> element).
+
+-----------------------------------------------------------------------
+SECTION 3: CONTACT INFORMATION
+-----------------------------------------------------------------------
+
+For more information or clarifications, please contact 
+Eric M. Dashofy, <a href="mailto:edashofy@ics.uci.edu">edashofy@ics.uci.edu</a>.
+
+-----------------------------------------------------------------------
+
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Utils
+Bundle-SymbolicName: edu.uci.isr.archstudio4.utils
+Bundle-Version: 4.0.0.qualifier
+Export-Package: edu.uci.isr.archstudio4.utils
+Require-Bundle: edu.uci.isr.xarchflat,
+ org.eclipse.jface
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

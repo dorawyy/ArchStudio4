@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://www.ics.uci.edu/pub/arch/xArch/statechartsruntime.xsd" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:statecharts="http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd"
+	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/statechartsruntime.xsd" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="qualified">
+
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd"
+				schemaLocation="http://www.isr.uci.edu/projects/xarchuci/ext/statecharts.xsd"/>
+
+	<xsd:element name="statechart" type="SimulatableStatechart"/>
+
+	<xsd:complexType name="Property">
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="value" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="RuntimeData">
+		<xsd:sequence>
+			<xsd:element name="controllingSimulator" type="xsd:string"/>
+			<xsd:element name="occupiedStates" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="pendingEvent" type="statecharts:Event" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="properties" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="SimulatableStatechart">
+		<xsd:complexContent>
+			<xsd:extension base="statecharts:Statechart">
+				<xsd:sequence>
+					<xsd:element name="owningModuleID" type="xsd:string"/>
+					<xsd:element name="runtimeData" type="RuntimeData" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+</xsd:schema>

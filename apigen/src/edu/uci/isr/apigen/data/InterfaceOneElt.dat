@@ -1,0 +1,25 @@
+
+	/**
+	 * Set the $$(ELT_NAME) for this $$(TYPE_NAME).
+	 * @param value new $$(ELT_NAME)
+	 */
+	public void set$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) value);
+
+	/**
+	 * Clear the $$(ELT_NAME) from this $$(TYPE_NAME).
+	 */
+	public void clear$$(ELT_NAME_CAPPED)();
+
+	/**
+	 * Get the $$(ELT_NAME) from this $$(TYPE_NAME).
+	 * @return $$(ELT_NAME)
+	 */
+	public $$(ELT_TYPE_INTERFACE_NAME) get$$(ELT_NAME_CAPPED)();
+
+	/**
+	 * Determine if this $$(TYPE_NAME) has the given $$(ELT_NAME)
+	 * @param $$(ELT_NAME)ToCheck $$(ELT_NAME) to compare
+	 * @return <code>true</code> if the $$(ELT_NAME)s are equivalent,
+	 * <code>false</code> otherwise
+	 */
+	public boolean has$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) $$(ELT_NAME)ToCheck);

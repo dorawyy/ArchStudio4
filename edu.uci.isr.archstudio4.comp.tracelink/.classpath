@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry excluding="edu/uci/isr/archstudio4/comp/tracelink/preferences/res/" kind="src" path="src"/>
+	<classpathentry kind="src" path="tests"/>
+	<classpathentry exported="true" kind="lib" path="res/db/sqlitejdbc-v053.jar"/>
+	<classpathentry exported="true" kind="lib" path="res/lucene/lucene-core-2.3.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

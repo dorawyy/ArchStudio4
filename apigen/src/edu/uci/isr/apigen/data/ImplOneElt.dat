@@ -1,0 +1,108 @@
+
+	public void set$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) value){
+		if(!(value instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot handle non-DOM-based xArch entities.");
+		}
+		{
+			$$(ELT_TYPE_INTERFACE_NAME) oldElt = get$$(ELT_NAME_CAPPED)();
+			DOMUtils.removeChildren(elt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, $$(ELT_NAME_VARNAME));
+			
+			IXArch context = getXArch();
+			if(context != null){
+				context.fireXArchEvent(
+					new XArchEvent(this, 
+					XArchEvent.CLEAR_EVENT,
+					XArchEvent.ELEMENT_CHANGED,
+					"$$(ELT_NAME)", oldElt,
+					XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this), true)
+				);
+			}
+		}
+		Element newChildElt = (Element)(((DOMBased)value).getDOMNode());
+		newChildElt = DOMUtils.cloneAndRename(newChildElt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, $$(ELT_NAME_VARNAME));
+		((DOMBased)value).setDOMNode(newChildElt);
+		
+		synchronized(DOMUtils.getDOMLock(elt)){
+			elt.appendChild(newChildElt);
+			DOMUtils.order(elt, getSequenceOrder());
+		}
+		
+		IXArch context = getXArch();
+		if(context != null){
+			context.fireXArchEvent(
+				new XArchEvent(this, 
+				XArchEvent.SET_EVENT,
+				XArchEvent.ELEMENT_CHANGED,
+				"$$(ELT_NAME)", value,
+				XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+			);
+		}
+	}
+	
+	public void clear$$(ELT_NAME_CAPPED)(){
+		$$(ELT_TYPE_INTERFACE_NAME) oldElt = get$$(ELT_NAME_CAPPED)();
+		DOMUtils.removeChildren(elt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, $$(ELT_NAME_VARNAME));
+		
+		IXArch context = getXArch();
+		if(context != null){
+			context.fireXArchEvent(
+				new XArchEvent(this, 
+				XArchEvent.CLEAR_EVENT,
+				XArchEvent.ELEMENT_CHANGED,
+				"$$(ELT_NAME)", oldElt,
+				XArchUtils.getDefaultXArchImplementation().isContainedIn(xArch, this))
+			);
+		}
+	}
+	
+	public $$(ELT_TYPE_INTERFACE_NAME) get$$(ELT_NAME_CAPPED)(){
+		NodeList nl = DOMUtils.getChildren(elt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, $$(ELT_NAME_VARNAME));
+		if(nl.getLength() == 0){
+			return null;
+		}
+		else{
+			Element el = (Element)nl.item(0);
+			IXArch de = getXArch();
+			if(de != null){
+				IXArchElement cachedXArchElt = de.getWrapper(el);
+				if(cachedXArchElt != null){
+					return ($$(ELT_TYPE_INTERFACE_NAME))cachedXArchElt;
+				}
+			}
+			
+			Object o = makeDerivedWrapper(el, "$$(ELT_TYPE_NAME)");
+			if(o != null){
+				try{
+					((edu.uci.isr.xarch.IXArchElement)o).setXArch(getXArch());
+					if(de != null){
+						de.cacheWrapper(el, ((edu.uci.isr.xarch.IXArchElement)o));
+					}
+					return ($$(ELT_TYPE_INTERFACE_NAME))o;
+				}
+				catch(Exception e){}
+			}
+			$$(ELT_TYPE_IMPL_NAME) eltImpl = new $$(ELT_TYPE_IMPL_NAME)(el);
+			eltImpl.setXArch(getXArch());
+			if(de != null){
+				de.cacheWrapper(el, ((edu.uci.isr.xarch.IXArchElement)eltImpl));
+			}
+			return eltImpl;
+		}
+	}
+	
+	public boolean has$$(ELT_NAME_CAPPED)($$(ELT_TYPE_INTERFACE_NAME) value){
+		$$(ELT_TYPE_INTERFACE_NAME) thisValue = get$$(ELT_NAME_CAPPED)();
+		$$(ELT_TYPE_INTERFACE_NAME) thatValue = value;
+		
+		if((thisValue == null) && (thatValue == null)){
+			return true;
+		}
+		else if((thisValue == null) && (thatValue != null)){
+			return false;
+		}
+		else if((thisValue != null) && (thatValue == null)){
+			return false;
+		}
+		return thisValue.isEquivalent(thatValue);
+	}
+

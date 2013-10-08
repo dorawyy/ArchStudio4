@@ -1,0 +1,8 @@
+	/**
+	 * Determine if another $$(TYPE_NAME) is equivalent to this one, ignoring
+	 * ID's.
+	 * @param $$(TYPE_NAME)ToCheck $$(TYPE_NAME) to compare to this one.
+	 * @return <code>true</code> if all the child elements of this
+	 * $$(TYPE_NAME) are equivalent, <code>false</code> otherwise.
+	 */
+	public boolean isEquivalent($$(TYPE_INTERFACE_NAME) $$(TYPE_NAME)ToCheck);

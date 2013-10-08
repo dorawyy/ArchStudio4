@@ -1,0 +1,2 @@
+
+			XArchPropertyMetadata.createAttribute("$$(ATTR_NAME)", "$$(ATTR_TYPE_CONTEXT_NAME)", "$$(ATTR_TYPE_NAME)", "$$(ATTR_FIXED_VALUE)", $$(ATTR_ENUM_ARRAY))

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse PDE Utils Plug-in
+Bundle-SymbolicName: edu.uci.isr.utils.eclipse.pde
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Institute for Software Research
+Export-Package: edu.uci.isr.utils.eclipse.pde
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.equinox.registry,
+ org.eclipse.pde.core,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6

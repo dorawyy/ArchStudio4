@@ -1,0 +1,16 @@
+/.buckminster/
+/.metadata/
+/External\ Plug-in\ Libraries/
+/*/bin/
+/*/build/
+/*/.settings/
+/*/target/classes/
+/*.xadl3.*/*.genmodel
+/*.xadl3.*/*.xsd2ecore
+/*.xadl3.*/*.ecore
+/repos/
+hs_err_pid*.log
+/*.feature/build.xml
+/*.p2/build.xml
+/*/javaCompilere...args
+.*._trace

@@ -1,0 +1,36 @@
+	public $$(ELT_TYPE_INTERFACE_NAME) get$$(ELT_NAME_CAPPED)(String id){
+		NodeList nl = DOMUtils.getChildren(elt, $$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI, $$(ELT_NAME_VARNAME));
+		for(int i = 0; i < nl.getLength(); i++){
+			
+			$$(ELT_TYPE_INTERFACE_NAME) el = new $$(ELT_TYPE_IMPL_NAME)((Element)nl.item(i));
+			if(DOMUtils.objNullEq(id, el.getId())){
+				Element domElt = (Element)nl.item(i);
+				Object o = makeDerivedWrapper(domElt, "$$(ELT_TYPE_NAME)");
+				if(o != null){
+					try{
+						((edu.uci.isr.xarch.IXArchElement)o).setXArch(getXArch());
+						return ($$(ELT_TYPE_INTERFACE_NAME))o;
+					}
+					catch(Exception e){}
+				}
+				el.setXArch(getXArch());
+				return el;
+			}
+		}
+		return null;
+	}
+	
+	public Collection get$$(ELT_NAME_CAPPED)s(Collection ids){
+		//If there is an ID that does not exist, it is simply ignored.
+		//You can tell if this happened if ids.size() != returned collection.size().
+		Vector v = new Vector();
+		for(Iterator en = ids.iterator(); en.hasNext(); ){
+			String elt = (String)en.next();
+			$$(ELT_TYPE_INTERFACE_NAME) retElt = get$$(ELT_NAME_CAPPED)(elt);
+			if(retElt != null){
+				v.addElement(retElt);
+			}
+		}
+		return v;
+	}	
+	

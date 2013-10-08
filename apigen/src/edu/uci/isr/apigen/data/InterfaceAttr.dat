@@ -1,0 +1,32 @@
+
+	/**
+	 * Set the $$(ATTR_NAME) attribute on this $$(TYPE_NAME).
+	 * @param $$(ATTR_NAME) $$(ATTR_NAME)
+	 * @exception FixedValueException if the attribute has a fixed value
+	 * and the value passed is not the fixed value.
+	*/
+	public void set$$(ATTR_NAME_CAPPED)(String $$(ATTR_NAME));
+
+	/**
+	 * Remove the $$(ATTR_NAME) attribute from this $$(TYPE_NAME).
+	 */
+	public void clear$$(ATTR_NAME_CAPPED)();
+
+	/**
+	 * Get the $$(ATTR_NAME) attribute from this $$(TYPE_NAME).
+	 * if the attribute has a fixed value, this function will
+	 * return that fixed value, even if it is not actually present
+	 * in the XML document.
+	 * @return $$(ATTR_NAME) on this $$(TYPE_NAME)
+	 */
+	public String get$$(ATTR_NAME_CAPPED)();
+
+	/**
+	 * Determine if the $$(ATTR_NAME) attribute on this $$(TYPE_NAME)
+	 * has the given value.
+	 * @param $$(ATTR_NAME) Attribute value to compare
+	 * @return <code>true</code> if they match; <code>false</code>
+	 * otherwise.
+	 */
+	public boolean has$$(ATTR_NAME_CAPPED)(String $$(ATTR_NAME));
+

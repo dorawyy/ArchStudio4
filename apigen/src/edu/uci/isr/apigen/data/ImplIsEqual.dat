@@ -1,0 +1,10 @@
+	public boolean isEqual($$(TYPE_INTERFACE_NAME) $$(TYPE_NAME)ToCheck){
+		String thisId = getId();
+		String thatId = $$(TYPE_NAME)ToCheck.getId();
+		
+		if((thisId == null) || (thatId == null)){
+			throw new IllegalArgumentException("One of the arguments is missing an ID.");
+		}
+		return thisId.equals(thatId);
+	}
+	

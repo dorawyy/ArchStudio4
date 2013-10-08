@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xADL-SWT Utilities Plug-in
+Bundle-SymbolicName: edu.uci.isr.xadlswtutils;singleton:=true
+Bundle-Version: 4.1.50.qualifier
+Bundle-Vendor: Institute for Software Research
+Export-Package: edu.uci.isr.xadlswtutils
+Require-Bundle: edu.uci.isr.xarchflat,
+ edu.uci.isr.xadlutils,
+ edu.uci.isr.swtutils,
+ org.eclipse.swt,
+ org.eclipse.jface

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<instance:xArch xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" xmlns:hints3="http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd" xmlns:tracelink="http://www.ics.uci.edu/pub/arch/xArch/tracelink.xsd" xmlns:types="http://www.ics.uci.edu/pub/arch/xArch/types.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd http://www.ics.uci.edu/pub/arch/xArch/tracelink.xsd http://acts.ics.uci.edu/tracelink/tracelink.xsd http://www.ics.uci.edu/pub/arch/xArch/hints3.xsd http://www.isr.uci.edu/projects/xarchuci/ext/hints3.xsd http://www.ics.uci.edu/pub/arch/xArch/statecharts.xsd http://www.isr.uci.edu/projects/xarchuci/ext/statecharts.xsd http://www.ics.uci.edu/pub/arch/xArch/activitydiagrams.xsd http://www.isr.uci.edu/projects/xarchuci/ext/activitydiagrams.xsd http://www.ics.uci.edu/pub/arch/xArch/types.xsd http://www.isr.uci.edu/projects/xarchuci/ext/types.xsd http://www.ics.uci.edu/pub/arch/xArch/changesets.xsd http://www.isr.uci.edu/projects/xarchuci/ext/changesets.xsd">
+    <types:archStructure types:id="archStructureffffff92-fc14aec1-9092cf5a-e7e40004" xsi:type="types:ArchStructure">
+        <types:description xsi:type="instance:Description">main</types:description>
+        <types:component types:id="componentffffff92-fc14f4a3-e180b647-e7e40006" xsi:type="types:Component">
+            <types:description xsi:type="instance:Description">ArchStudio4</types:description>
+        </types:component>
+    </types:archStructure>
+    <hints3:renderingHints3 xsi:type="hints3:RenderingHints3">
+        <hints3:hintedElement hints3:maintainer="edu.uci.isr.archstudio4.comp.archipelago" xsi:type="hints3:HintBundle" hints3:version="4.0.0"/>
+    </hints3:renderingHints3>
+    <tracelink:archTraceLinks xsi:type="tracelink:ArchTraceLinks">
+        <tracelink:traceLink tracelink:traceLinkID="m1234567890" xsi:type="tracelink:TraceLink">
+            <tracelink:description xsi:type="instance:Description">Links to ArchStudio4 documentation</tracelink:description>
+            <tracelink:traceLinkRelationship xsi:type="tracelink:TraceLinkRelationship">
+                <tracelink:classification xsi:type="instance:Description">UserGuides</tracelink:classification>
+            </tracelink:traceLinkRelationship>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="a111111111111111" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="#componentffffff92-fc14f4a3-e180b647-e7e40006" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:status xsi:type="tracelink:Status">valid</tracelink:status>
+                <tracelink:author tracelink:groupname="ISR" xsi:type="tracelink:Author" tracelink:username="hasuncio"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">2008-05-01T18:13:14.41</tracelink:dateTime>
+                    <tracelink:description xsi:type="instance:Description">addition</tracelink:description>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">manual_record</tracelink:captureMode>
+                <tracelink:actionType xsi:type="tracelink:ActionType" tracelink:viewer="Archipelago">
+                    <tracelink:description xsi:type="instance:Description">navigation</tracelink:description>
+                </tracelink:actionType>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="a2222222222" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:href="http://www.isr.uci.edu/projects/archstudio/" xlink:type="simple" xsi:type="instance:XMLLink"/>
+                <tracelink:status xsi:type="tracelink:Status">valid</tracelink:status>
+                <tracelink:author tracelink:groupname="ISR" xsi:type="tracelink:Author" tracelink:username="edashofy"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">2007-05-01T18:13:14.41</tracelink:dateTime>
+                    <tracelink:description xsi:type="instance:Description">addition</tracelink:description>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">manual_record</tracelink:captureMode>
+                <tracelink:actionType xsi:type="tracelink:ActionType" tracelink:viewer="browser">
+                    <tracelink:description xsi:type="instance:Description">navigation</tracelink:description>
+                </tracelink:actionType>
+            </tracelink:traceEndpoint>
+            <tracelink:traceEndpoint tracelink:traceEndpointID="a33333333333333" xsi:type="tracelink:TraceEndpoint">
+                <tracelink:location xlink:type="simple" xlink:href="http://tps.ics.uci.edu/pmwiki/pmwiki.php?n=HostedProjects.ArchStudio4" xsi:type="instance:XMLLink"/>
+                <tracelink:status xsi:type="tracelink:Status">valid</tracelink:status>
+                <tracelink:author tracelink:groupname="ISR" xsi:type="tracelink:Author" tracelink:username="shendric"/>
+                <tracelink:timeStamp xsi:type="tracelink:TimeStamp">
+                    <tracelink:dateTime xsi:type="tracelink:DateTimeStamp">2008-02-01T18:13:14.41</tracelink:dateTime>
+                    <tracelink:description xsi:type="instance:Description">addition</tracelink:description>
+                </tracelink:timeStamp>
+                <tracelink:captureMode xsi:type="tracelink:CaptureMode">manual_record</tracelink:captureMode>
+                <tracelink:actionType xsi:type="tracelink:ActionType" tracelink:viewer="browser">
+                    <tracelink:description xsi:type="instance:Description">navigation</tracelink:description>
+                </tracelink:actionType>
+            </tracelink:traceEndpoint>
+        </tracelink:traceLink>
+    </tracelink:archTraceLinks>
+</instance:xArch>

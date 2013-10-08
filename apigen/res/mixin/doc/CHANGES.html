@@ -1,0 +1,252 @@
+<HTML>
+<HEAD><TITLE>CHANGELOG for Apigen Builds</TITLE></HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<PRE>
+-----------------------------------------------------------------------
+CHANGELOG for Apigen Builds
+-----------------------------------------------------------------------
+
+Build 1031:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added lookupimplementation.xsd to xADL 2.0 settings file.
+
+Build 1030:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Generated libraries now synchronize when accessing the DOM for
+      non-threadsafe DOM implementations.
+  
+Build 1029:
+  Scott A. Hendrickson [shendric@uci.edu]:
+    - Enumerated values of super types are now included in properties 
+      that extend them.
+    - Modified XArchMetadataUtils.getTypeMetadata(...) to return
+      null rathern than throw an exception when a type cannot be found.
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added analysis.xsd and tronanalysis.xsd schemas to xADL 2.0
+      settings file.
+      
+Build 1028:
+  Scott A. Hendrickson [shendric@uci.edu]:
+    - Added the creation of metadata information for types and 
+      instances.
+    - Added command line parameters to ApiGen to add additional
+      schema mappings and schemas to process as well as to specify 
+      an output folder.
+    - Changed the ApiGenGui so that the tables in the mapping and 
+      schema picker panels are editable.
+
+Build 1027:
+  Scott A. Hendrickson [shendric@uci.edu]:
+    - Added the creation of context interfaces and a means to create
+      contexts through the IXArchImplementation interface.
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Encapsulated the entrypoint to the generated library better.
+      Now, all document-level services (create, clone, parse,
+      serialize) are handled through an implementation of the class
+      IXArchImplementation.  Corresponding methods in XArchUtils are
+      still functional but deprecated.  Get the DOM-based (default)
+      IXArchImplementation through the 
+      XArchUtils.getDefaultXArchImplementation() call.
+    - Added the ability to generate libraries based on a settings
+      file without bringing up the GUI.  Command-line is:
+      java edu.uci.isr.apigen.ApiGen -auto [filename]
+
+Build 1026:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Workaround (in DOMUtils) for an obscure Crimson bug that occurs
+      when you parse a document, then try to move a node with
+      attributes from one parent to another.  This avoids DOM
+      (erroneously) throwing WRONG_DOCUMENT_ERR. This bug has
+      apparently been fixed in J2SDK 1.5 (J2SDK 5.0), so the
+      workaround is not applied there.
+      Special thanks to Kari Nies [kari@ics.uci.edu]
+
+Build 1025:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added the javasourcecode and sourcecodeeclipse schemas to the
+      xADL 2.0 settings file.
+
+Build 1024:
+  Justin R. Erenkrantz [justin@erenkrantz.com]:
+    - Fix to put the indenting back in getPrettyXMLRepresentation()
+
+Build 1023:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added the pladiff schema to the xADL 2.0 settings file.
+
+Build 1022:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added support for fixed attribute values.  See README.TXT for
+      details.  
+
+Build 1021:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed a bug that could cause a NullPointerException when
+      processing a schema that has an element with minOccurs > 0 and
+      maxOccurs > 1 whose type has attributes that are ref'ed.
+      Special thanks to Nikunj Mehta [mehta@usc.edu].
+    - Fixed a bug that could cause a "can't resolve namespace prefix"
+      error when processing a schema that has an element of a
+      type imported from another schema, where the imported type
+      has attributes that are ref'ed from a third schema via a 
+      namespace prefix not defined in the original schema.
+      Special thanks to Nikunj Mehta [mehta@usc.edu].
+
+Build 1020:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed a latent bug in generated StringReplacerReader that could 
+      cause parsing to hang or throw an exception when using a
+      non-Crimson parser like Apache Xerces.  
+      Very special thanks to Justin Erenkrantz [justin@erenkrantz.com]
+      for both finding and fixing the bug.
+    - Fixed a few Javadoc inconsistencies between parameter names in
+      the Javadoc and parameter names in the actual method signature,
+      reducing Javadoc warnings.
+
+Build 1019:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Changed the Javadoc parameters in the build files.
+      Special thanks to Ebru Dincel [dincel@pollux.usc.edu]
+    - Fixed a bug that could cause some functions, among them 
+      create functions, from not getting generated into a context
+      when the only declaration of the need for that type was in
+      a complex type extension in the schema.
+      Special thanks to Roshanak Roshandel [roshande@usc.edu]
+
+Build 1018:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed a bug that does not properly capitalize base type
+      names if they aren't already.
+      Special thanks to T. Owen O'Malley [owen@email.arc.nasa.gov]
+
+Build 1017:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added the Menage schema to the xADL 2.0 build settings file.
+    - Changed the name of IXArch variable in ImplAttr.dat to
+      _x so as not to interfere with attributes called x.
+
+Build 1016:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Changed the normative URL for the xArch schema (instance.xsd) in
+      the xADL 2.0 schemas to a more stable one; schemas have been
+      updated also.
+
+Build 1015:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - get() and getAll() methods now cache their results instead of
+      creating new objects each time.  This should improve performance
+      and reduce garbage collector thrashing.
+    - isEquivalent() now checks that the two objects are of the same
+      class as well.  If they aren't, then they necessarily can't be
+      equivalent.
+
+Build 1014:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Attribute setXXX() calls now do a clearXXX() call first, just
+      like elements.  This means that a clear event will be emitted
+      before the set event, which means tools do not have to be
+      "psychic" and figure out what the previous value was before
+      the set operation if it is needed.
+
+Build 1013:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Made getAllxxx() functions more efficient.
+  
+Build 1012:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - XArchEvents are now emitted when an element is promoted.
+    - XArchEvents for xArch element children now have their target 
+      names set as if they were regular IXArchElements (i.e. to the 
+      name of the child, rather than "xArch," when possible.
+    - Fix in generated XArchUtils.getXSIType() routine that is better
+      at guessing an element's xsi:type URI when there is an
+      unresolvable prefix.  The only observed case where this happens
+      occurs when an element is recontextualized across documents.
+      Special thanks to Ping Chen [pingc@hotmail.com]      
+      Special thanks to Chris Van der Westhuizen 
+      [vanderwe@ics.uci.edu]      
+      
+Build 1011:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Changed official name of the tool to Apigen instead of 'xArch
+      Apigen'
+    - Made the warning message about a problem setting directory
+      less severe; many users assumed this was some sort of fatal
+      error.
+    - Package-title guesser now handles non-forward-slash file
+      separators better.
+      Special thanks to Chris Jensen [cjensen@uci.edu]
+
+Build 1010:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Fixed obscure bug in generated XArchUtils.java that caused a
+      NullPointerException when serializing some documents to XML.
+      Special thanks to Ping Chen [pingc@hotmail.com]      
+
+Build 1009:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added targets on clear events for attributes and single elements
+      to indicate the value of the element or attribute before it was 
+      cleared.
+    - Fixed minOccurs and maxOccurs to default to 1 if not specified,
+      in accordance with latest schema spec.
+      Special thanks to Roshanak Roshandel [roshande@usc.edu]
+      Special thanks to Ebru Dincel [dincel@pollux.usc.edu]
+      
+Build 1008:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added a README.TXT describing how to use the tool and what the
+      supported XML schema constructs are.
+    - Special thanks to Roshanak Roshandel [roshande@usc.edu]
+    - Special thanks to Ebru Dincel [dincel@pollux.usc.edu]
+
+Build 1007:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added support for schema elements with basic types (that is,
+      simple types from the xsd: namespace like xsd:string,
+      xsd:integer, etc.)  
+    - Made "Untyped element" error message more descriptive
+    - Fixed some bugs in generated code that occurred when
+      the first letter of an XML type name was lowercase.
+    - Removed the "main" test driver function from
+      the Apigen class to avoid confusion.
+    - Special thanks to Roshanak Roshandel [roshande@usc.edu]
+    - Special thanks to Ebru Dincel [dincel@pollux.usc.edu]
+
+Build 1006:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Added ISR Mighty Automated Build materials to Apigen
+      distribution in the build-files/ directory.  These will allow
+      Apigen users to easily build their own data binding libraries
+      out of the source files that Apigen generates using the
+      Apache Ant build tool.
+  
+Build 1005:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Minor revision update to Apigen Alpha 2.8.  Migrated Apigen
+      to support 05/2001 XML Schema recommendation.  10/2000 schemas
+      are no longer supported.
+    - Added CHANGES.TXT to Apigen build.
+
+Build 1004:
+  [No entries]
+
+Build 1003:
+  [No entries]
+
+Build 1002:
+  [No entries]
+
+Build 1001:
+  [No entries]
+
+Build 1000:
+  Eric M. Dashofy [edashofy@ics.uci.edu]:
+    - Initial release of Apigen under the ISR Software 
+      Deployment system.
+
+</PRE>
+</BODY>
+</HTML>
+  

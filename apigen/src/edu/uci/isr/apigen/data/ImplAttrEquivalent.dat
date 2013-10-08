@@ -1,0 +1,1 @@
+		has$$(ATTR_NAME_CAPPED)(c.get$$(ATTR_NAME_CAPPED)()) &&

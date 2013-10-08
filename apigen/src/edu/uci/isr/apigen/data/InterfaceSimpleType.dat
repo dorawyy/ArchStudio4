@@ -1,0 +1,37 @@
+
+	/** 
+	 * Set the value for this $$(TYPE_NAME).
+	 * @param value Value to set.
+	 */
+	public void setValue(String value);
+
+	/** 
+	 * Remove the value for this $$(TYPE_NAME).
+	 */
+	public void clearValue();
+
+	/**
+	 * Get the value for this $$(TYPE_NAME).
+	 * @return value
+	 */
+	public String getValue();
+
+	/**
+	 * Determine if this $$(TYPE_NAME) has the
+	 * given value.  Matching is done by string
+	 * equality.
+	 * @return <code>true</code> if they match,
+	 * <code>false</code> otherwise.
+	 */
+	public boolean hasValue(String value);
+
+	/**
+	 * Determine if another $$(TYPE_NAME) is
+	 * equivalent to this one.
+	 * @param $$(TYPE_NAME)ToCompare $$(TYPE_NAME) to compare against
+	 * this one.
+	 * @return <code>true</code> if their values are equivalent,
+	 * <code>false</code> otherwise.
+	 */
+	public boolean isEquivalent($$(TYPE_INTERFACE_NAME) $$(TYPE_NAME)ToCompare);
+

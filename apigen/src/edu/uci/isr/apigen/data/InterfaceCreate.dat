@@ -1,0 +1,6 @@
+	/**
+	 * Create an $$(TYPE_INTERFACE_NAME) object in this namespace.
+	 * @return New $$(TYPE_INTERFACE_NAME) object.
+	 */
+	public $$(TYPE_INTERFACE_NAME) create$$(TYPE_NAME_CAPPED)();
+

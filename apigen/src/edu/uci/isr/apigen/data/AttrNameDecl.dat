@@ -1,0 +1,2 @@
+	/** Tag name for $$(ATTR_NAME)s in this object. */
+	public static final String $$(ATTR_NAME_VARNAME) = "$$(ATTR_NAME)";

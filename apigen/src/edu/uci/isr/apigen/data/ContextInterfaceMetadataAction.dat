@@ -1,0 +1,2 @@
+
+			new XArchActionMetadata($$(ACTION_TYPE), $$(ACTION_SOURCE_TYPE), $$(ACTION_DEST_TYPE))

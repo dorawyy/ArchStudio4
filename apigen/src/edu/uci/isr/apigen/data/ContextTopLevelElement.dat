@@ -1,0 +1,89 @@
+	/**
+	 * Create a top-level element of type <code>$$(ELEMENT_TYPE_INTERFACE_NAME)</code>.
+	 * This function should be used in lieu of <code>create$$(ELEMENT_TYPE_CAPPED)</code>
+	 * if the element is to be added as a sub-object of <code>IXArch</code>.
+	 * @return new $$(ELEMENT_TYPE_INTERFACE_NAME) suitable for adding
+	 * as a child of xArch.
+	 */
+	public $$(ELEMENT_TYPE_INTERFACE_NAME) create$$(ELEMENT_TYPE_CAPPED)Element(){
+		Element elt = createElement("$$(ELEMENT_NAME)");
+		DOMUtils.addXSIType(elt, $$(ELEMENT_TYPE_IMPL_NAME).XSD_TYPE_NSURI, 
+			$$(ELEMENT_TYPE_IMPL_NAME).XSD_TYPE_NAME);
+		$$(ELEMENT_TYPE_IMPL_NAME) newElt = new $$(ELEMENT_TYPE_IMPL_NAME)(elt);
+
+		IXArch de = getXArch();
+		newElt.setXArch(de);
+		return newElt;
+	}
+
+	/**
+	 * Gets the $$(ELEMENT_TYPE_INTERFACE_NAME) child from the given <code>IXArch</code>
+	 * element.  If there are multiple matching children, this returns the first one.
+	 * @param xArch <code>IXArch</code> object from which to get the child.
+	 * @return <code>$$(ELEMENT_TYPE_INTERFACE_NAME)</code> that is the child
+	 * of <code>xArch</code> or <code>null</code> if no such object exists.
+	 */
+	public $$(ELEMENT_TYPE_INTERFACE_NAME) get$$(ELEMENT_TYPE_CAPPED)(IXArch xArch){
+		if(!(xArch instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot process non-DOM based xArch entities.");
+		}
+		Collection elementCollection = xArch.getAllObjects();
+		for(Iterator en = elementCollection.iterator(); en.hasNext(); ){
+			Object o = en.next();
+			if(o instanceof $$(ELEMENT_TYPE_INTERFACE_NAME)){
+				return ($$(ELEMENT_TYPE_INTERFACE_NAME))o;
+			}
+			else if(o instanceof Element){
+				Element elt = (Element)o;
+				synchronized(DOMUtils.getDOMLock(elt)){
+					String nsURI = elt.getNamespaceURI();
+					String localName = elt.getLocalName();
+					if((nsURI != null) && (nsURI.equals($$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI))){
+						if((localName != null) && (localName.equals("$$(ELEMENT_NAME)"))){
+							$$(ELEMENT_TYPE_IMPL_NAME) newElt = new $$(ELEMENT_TYPE_IMPL_NAME)(elt);
+							newElt.setXArch(this.getXArch());
+							return newElt;
+						}
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Gets all the $$(ELEMENT_TYPE_INTERFACE_NAME) children from the given 
+	 * <code>IXArch</code> element.
+	 * @param xArch <code>IXArch</code> object from which to get the children.
+	 * @return Collection of <code>$$(ELEMENT_TYPE_INTERFACE_NAME)</code> that are 	
+	 * the children of <code>xArch</code> or an empty collection if no such object exists.
+	 */
+	public Collection getAll$$(ELEMENT_TYPE_CAPPED)s(IXArch xArch){
+		if(!(xArch instanceof DOMBased)){
+			throw new IllegalArgumentException("Cannot process non-DOM based xArch entities.");
+		}
+		Collection elementCollection = xArch.getAllObjects();
+		Vector v = new Vector();
+
+		for(Iterator en = elementCollection.iterator(); en.hasNext(); ){
+			Object o = en.next();
+			if(o instanceof $$(ELEMENT_TYPE_INTERFACE_NAME)){
+				v.addElement(o);
+			}
+			else if(o instanceof Element){
+				Element elt = (Element)o;
+				synchronized(DOMUtils.getDOMLock(elt)){
+					String nsURI = elt.getNamespaceURI();
+					String localName = elt.getLocalName();
+					if((nsURI != null) && (nsURI.equals($$(PACKAGE_CONSTANTS_CLASS_NAME).NS_URI))){
+						if((localName != null) && (localName.equals("$$(ELEMENT_NAME)"))){
+							$$(ELEMENT_TYPE_IMPL_NAME) newElt = new $$(ELEMENT_TYPE_IMPL_NAME)(elt);
+							newElt.setXArch(this.getXArch());
+							v.addElement(newElt);
+						}
+					}
+				}
+			}
+		}
+		return v;
+	}

@@ -1,0 +1,4 @@
+	public boolean isEquivalent($$(TYPE_INTERFACE_NAME) c){
+		return (getClass().equals(c.getClass())) &&
+$$(IS_EQUIVALENT_ITEMS)
+	}

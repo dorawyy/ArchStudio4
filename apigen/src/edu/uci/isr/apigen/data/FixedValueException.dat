@@ -1,0 +1,37 @@
+package edu.uci.isr.xarch;
+
+/**
+ * Thrown when a user makes a set, clear, or other call that
+ * attempts to change the value of a fixed-value attribute
+ * or element.
+ * @author Eric M. Dashofy <a href="mailto:edashofy@ics.uci.edu">edashofy@ics.uci.edu</a>
+ */
+public class FixedValueException extends RuntimeException{
+
+	private String fieldName;
+	private String fieldValue;
+
+	/**
+	 * Create a new <code>FixedValueException</code> with the name
+	 * of the attribute or element given.
+	 * @param fieldName The name of the element or attribute with the fixed value.
+	 * @param fieldValue The fixed field value.
+	 */
+	public FixedValueException(String fieldName, String fieldValue){
+		this.fieldName = fieldName;
+		this.fieldValue = fieldValue;
+	}
+
+	public String getFieldName(){
+		return fieldName;
+	}
+
+	public String getFieldValue(){
+		return fieldValue;
+	}
+
+	public String toString(){
+		return "The field \"" + fieldName + "\" has a fixed value \"" + fieldValue +
+			"\" and cannot be set to anything else.";
+	}
+}

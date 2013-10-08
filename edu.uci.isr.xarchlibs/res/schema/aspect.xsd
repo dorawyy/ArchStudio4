@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns="http://www.ics.uci.edu/pub/arch/xArch/aspect.xsd" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/aspect.xsd"
+	attributeFormDefault="qualified" 
+	elementFormDefault="qualified">
+
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" schemaLocation="http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd"/>
+	
+	<xsd:simpleType name="AdviceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="before"/>
+			<xsd:enumeration value="after"/>
+			<xsd:enumeration value="around"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:element name="aspect" type="Aspect"/>
+	
+	<xsd:complexType name="Aspect">
+		<xsd:sequence>
+			<xsd:element name="binder" type="Binder" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="Binder">
+		<xsd:sequence>
+			<xsd:element name="pointcut" type="Pointcut"/>
+			<xsd:element name="modifier" type="Modifier"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Pointcut" abstract="true">
+		<xsd:attribute name="id" type="instance:Identifier"/>
+		<xsd:attribute name="advice" type="AdviceType"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Modifier" abstract="true">
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="AndPointcut">
+		<xsd:complexContent>
+			<xsd:extension base="Pointcut">
+				<xsd:sequence>
+					<xsd:element name="pointcut" type="Pointcut"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+</xsd:schema>

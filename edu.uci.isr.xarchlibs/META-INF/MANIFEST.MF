@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: xADL Schema Plug-in
+Bundle-SymbolicName: edu.uci.isr.xarchlibs;singleton:=true
+Bundle-Version: 4.1.50.qualifier
+Bundle-Localization: plugin
+Eclipse-LazyStart: false

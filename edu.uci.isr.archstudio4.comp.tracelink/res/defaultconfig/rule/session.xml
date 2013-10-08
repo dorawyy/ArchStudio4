@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_05" class="java.beans.XMLDecoder"> 
+ <object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel"> 
+  <void property="element"> 
+   <string>#componentffa80164-fc3d787f-2c9c11be-19f0152d</string> 
+  </void> 
+  <void property="groupNum"> 
+   <int>1</int> 
+  </void> 
+  <void property="relationship"> 
+   <string>doc </string> 
+  </void> 
+  <void property="selectedItem"> 
+   <object class="org.eclipse.jface.viewers.StructuredSelection"/> 
+  </void> 
+  <void property="timeStamp"> 
+   <object class="java.util.Date"> 
+    <long>1225695093218</long> 
+   </object> 
+  </void> 
+  <void property="view"> 
+   <string>edu.uci.isr.archstudio4.comp.archipelago.ArchipelagoEditor@d03350</string> 
+  </void> 
+ </object> 
+ <object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel"> 
+  <void property="element"> 
+   <string>/ProjectArtifacts_Trace/notes_logging.doc</string> 
+  </void> 
+  <void property="groupNum"> 
+   <int>1</int> 
+  </void> 
+  <void property="relationship"> 
+   <string>unknown</string> 
+  </void> 
+  <void property="selectedItem"> 
+   <object class="org.eclipse.jface.viewers.TreeSelection"/> 
+  </void> 
+  <void property="timeStamp"> 
+   <object class="java.util.Date"> 
+    <long>1225695101734</long> 
+   </object> 
+  </void> 
+  <void property="view"> 
+   <string>org.eclipse.ui.views.navigator.ResourceNavigator@9a5a48</string> 
+  </void> 
+ </object> 
+ <object class="edu.uci.isr.archstudio4.comp.tracelink.models.SelectionModel"> 
+  <void property="element"> 
+   <string>http://www.uci.edu/</string> 
+  </void> 
+  <void property="groupNum"> 
+   <int>1</int> 
+  </void> 
+  <void property="relationship"> 
+   <string>unknown</string> 
+  </void> 
+  <void property="timeStamp"> 
+   <object class="java.util.Date"> 
+    <long>1225695142265</long> 
+   </object> 
+  </void> 
+  <void property="view"> 
+   <string>Mozilla Firefox</string> 
+  </void> 
+ </object> 
+</java> 
