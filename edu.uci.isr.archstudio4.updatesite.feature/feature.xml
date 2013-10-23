@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="edu.uci.isr.archstudio4.updatesite.feature"
+      label="ArchStudio 4"
+      version="4.0.0.qualifier"
+      provider-name="Institute for Software Research, UC Irvine">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <discovery label="http://subclipse.tigris.org/update_1.6.x" url="http://subclipse.tigris.org/update_1.6.x"/>
+      <discovery label="http://download.eclipse.org/releases/helios" url="http://download.eclipse.org/releases/helios"/>
+      <discovery label="http://download.eclipse.org/eclipse/updates/3.6" url="http://download.eclipse.org/eclipse/updates/3.6"/>
+      <discovery label="http://download.eclipse.org/tools/buckminster/updates-3.6" url="http://download.eclipse.org/tools/buckminster/updates-3.6"/>
+      <discovery label="http://download.cloudsmith.com/buckminster/external-3.6" url="http://download.cloudsmith.com/buckminster/external-3.6"/>
+   </url>
+
+   <includes
+         id="edu.uci.isr.archstudio4.feature"
+         version="0.0.0"/>
+
+</feature>
