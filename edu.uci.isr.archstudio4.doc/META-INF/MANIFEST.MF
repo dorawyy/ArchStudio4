@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ArchStudio 4 Documentation
+Bundle-SymbolicName: edu.uci.isr.archstudio4.doc
+Bundle-Version: 1.0.0.qualifier
