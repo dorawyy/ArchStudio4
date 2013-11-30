@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://www.ics.uci.edu/pub/arch/xArch/classdiagrams.xsd" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/classdiagrams.xsd"
+	elementFormDefault="qualified" 
+	attributeFormDefault="qualified">
+
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" schemaLocation="http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd"/>
+
+	<xsd:element name="classDiagrams" type="ClassDiagram"/>
+
+	<xsd:simpleType name="OperationScope">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="private" />
+			<xsd:enumeration value="public" />
+			<xsd:enumeration value="protected" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="RelationshipType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Aggregation" />
+			<xsd:enumeration value="Composition" />
+			<xsd:enumeration value="Generalization" />
+			<xsd:enumeration value="Association" />
+			<xsd:enumeration value="OneWayAssociation" />
+			<xsd:enumeration value="TwoWayAssociation" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="Multiplicity">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="0__1" />
+			<xsd:enumeration value="U" />
+			<xsd:enumeration value="0__U" />
+			<xsd:enumeration value="1__U" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="ClassDiagram">
+		<xsd:sequence>
+			<xsd:element name="description" type="instance:Description"/>
+			<xsd:element name="class" type="Class" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="relationship" type="Relationship" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="Class">
+		<xsd:sequence>
+			<xsd:element name="description" type="instance:Description"/>
+			<xsd:element name="attribute" type="ClassAttribute" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="operation" type="ClassOperation" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="Relationship">
+		<xsd:sequence>
+			<xsd:element name="description" type="instance:Description"/>
+			<xsd:element name="fromClass" type="instance:XMLLink"/>
+			<xsd:element name="toClass" type="instance:XMLLink"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+		<xsd:attribute name="relationshipType" type="RelationshipType"/>
+		<xsd:attribute name="fromClassMultiplicity" type="Multiplicity"/>
+		<xsd:attribute name="fromClassRole" type="xsd:String"/>
+		<xsd:attribute name="toClassMultiplicity" type="Multiplicity"/>
+		<xsd:attribute name="toClassRole" type="xsd:String"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ClassAttribute">
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="type" type="xsd:string"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ClassOperation">
+		<xsd:sequence>
+			<xsd:element name="parameters" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="returnType" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="operationScope" type="OperationScope" />
+	</xsd:complexType>
+	
+	<xsd:complexType name="ParameterType">
+		<xsd:attribute name="name" type="xsd:string"/>
+		<xsd:attribute name="type" type="xsd:string"/>
+		<xsd:attribute name="orderNumber" type="xsd:integer"/>
+	</xsd:complexType>
+
+</xsd:schema>

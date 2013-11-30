@@ -1,0 +1,13 @@
+<!--
+  Stub schema for XLink so other xArch schemas can be properly
+  validated.  There is no normative schema for XLink.
+ -->
+ 
+<xsd:schema xmlns="http://www.w3.org/1999/xlink"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  targetNamespace="http://www.w3.org/1999/xlink"
+>
+  <xsd:attribute name="type" type="xsd:string"/>
+  <xsd:attribute name="href" type="xsd:anyURI"/>
+</xsd:schema>

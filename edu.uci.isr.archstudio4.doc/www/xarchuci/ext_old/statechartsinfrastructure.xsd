@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://www.ics.uci.edu/pub/arch/xArch/statechartsarchitecture.xsd" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+	xmlns:statecharts="http://www.ics.uci.edu/pub/arch/xArch/statechartsruntime.xsd"
+	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/statechartsinfrastructure.xsd" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="qualified">
+
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" 
+				schemaLocation="http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd"/>
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/statechartsruntime.xsd"
+				schemaLocation="http://www.isr.uci.edu/projects/xarchuci/ext/statechartsruntime.xsd"/>
+
+	<xsd:element name="architecture" type="StatechartArchitecture"/>
+
+	<xsd:complexType name="Module">
+		<xsd:sequence>
+			<xsd:element name="statechart" type="statecharts:SimulatableStatechart"/>
+			<xsd:element name="interface" type="Interface" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Link">
+		<xsd:sequence>
+			<xsd:element name="module" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="Interface">
+		<xsd:sequence>
+			<xsd:element name="link" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="StatechartArchitecture">
+		<xsd:sequence>
+			<xsd:element name="module" type="Module" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="link" type="Link" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+		<xsd:attribute name="description" type="xsd:string"/>
+	</xsd:complexType>
+	
+</xsd:schema>

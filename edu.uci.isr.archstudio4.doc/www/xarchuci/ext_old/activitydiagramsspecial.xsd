@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://www.ics.uci.edu/pub/arch/xArch/activitydiagramsspecial.xsd" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:instance="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd"
+	xmlns:uml2="http://www.ics.uci.edu/pub/arch/xArch/uml212-superstructure.xsd"
+	targetNamespace="http://www.ics.uci.edu/pub/arch/xArch/activitydiagramsspecial.xsd" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="qualified">
+
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/instance.xsd" schemaLocation="http://www.isr.uci.edu/projects/xarchuci/core/instance.xsd"/>
+	<xsd:import namespace="http://www.ics.uci.edu/pub/arch/xArch/uml212superstructure.xsd" schemaLocation="http://www.isr.uci.edu/projects/xarchuci/ext/uml212superstructure.xsd"/>
+	
+  <xsd:annotation>
+    <xsd:documentation>
+		Activity Diagrams from the    
+    	Unified Modeling Language (UML), version 2.1.1
+    	http://www.omg.org/technology/documents/formal/uml.htm 
+    	
+    	
+    </xsd:documentation>
+  </xsd:annotation>
+
+	<xsd:element name="activityDiagram" type="ActivityDiagram"/>
+
+	<!-- Activity -->
+	
+	<xsd:complexType name="ActivityDiagram">
+		<xsd:complexContent>
+			<xsd:extension base="uml2:ActivityDiagram">
+			
+			<xsd:sequence>
+			
+				<xsd:element name="note" type="Note" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="actor" type="uml2:Actor" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="activityDiagramReference" type="ActivityDiagramReference" minOccurs="0" maxOccurs="unbounded"/>
+						
+			</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	
+
+	<xsd:complexType name="Note">
+		<xsd:sequence>
+			<xsd:element name="description" type="instance:Description"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+	<!-- Maybe combined nodes for diagram Merge Join Fork Decision -->
+
+	
+	<xsd:complexType name="ActivityDiagramReference">
+		<xsd:sequence>
+			<xsd:element name="description" type="instance:Description"/>
+			<xsd:element name="diagramPointer" type="instance:XMLLink"/>
+			<xsd:element name="diagramName" type="instance:Description"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="instance:Identifier"/>
+	</xsd:complexType>
+	
+</xsd:schema>
