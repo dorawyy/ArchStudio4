@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<matrix-project>
+  <actions/>
+  <description>Build and publish ArchStudio&apos;s update site</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/isr-uci-edu/ArchStudio4.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        <relativeTargetDir>repos</relativeTargetDir>
+      </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>H/3 * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <axes>
+    <hudson.matrix.TextAxis>
+      <name>eclipse_version</name>
+      <values>
+        <string>3.7</string>
+        <string>4.2</string>
+      </values>
+    </hudson.matrix.TextAxis>
+  </axes>
+  <builders>
+    <hudson.tasks.Ant plugin="ant@1.2">
+      <targets> -Ddir=&quot;${WORKSPACE}&quot;
+ -Ddelete=**/*
+ -Dretain=repos*/**/*,buckminster/**/*,director*,director/**/*
+clean
+ -Declipse.version=4.3
+install-buckminster
+</targets>
+      <antName>1.9</antName>
+      <buildFile>repos/edu.uci.isr.archstudio4.releng/build.xml</buildFile>
+    </hudson.tasks.Ant>
+    <hudson.tasks.Ant plugin="ant@1.2">
+      <targets> -Declipse.version=${eclipse_version}
+ -Dlocal.repos=&quot;${WORKSPACE}/repos&quot;
+ -Dbuckminster.component=edu.uci.isr.archstudio4.updatesite.feature
+resolve-cquery
+build-update-site
+</targets>
+      <antName>1.9</antName>
+      <buildFile>repos/edu.uci.isr.archstudio4.releng/build.xml</buildFile>
+    </hudson.tasks.Ant>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash -ex
+for retries in {5..0}; do
+  [ $retries -eq 0 ] &amp;&amp; exit 1
+  ssh isr@openlab.ics.uci.edu mkdir -p /home/isr/public_html/projects/archstudio-4/updatesite-${eclipse_version} || continue
+  rsync -rv --delete-after --delay-updates \
+      &quot;${WORKSPACE}/edu.uci.isr.archstudio4.updatesite.feature/&quot; \
+      isr@openlab.ics.uci.edu:/home/isr/public_html/projects/archstudio-4/updatesite-${eclipse_version} || continue
+  break
+done</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.analysis.collector.AnalysisPublisher plugin="analysis-collector@1.38">
+      <healthy></healthy>
+      <unHealthy></unHealthy>
+      <thresholdLimit>low</thresholdLimit>
+      <pluginName>[ANALYSIS-COLLECTOR] </pluginName>
+      <defaultEncoding></defaultEncoding>
+      <canRunOnFailed>true</canRunOnFailed>
+      <useStableBuildAsReference>false</useStableBuildAsReference>
+      <useDeltaValues>false</useDeltaValues>
+      <thresholds plugin="analysis-core@1.54">
+        <unstableTotalAll></unstableTotalAll>
+        <unstableTotalHigh></unstableTotalHigh>
+        <unstableTotalNormal></unstableTotalNormal>
+        <unstableTotalLow></unstableTotalLow>
+        <failedTotalAll></failedTotalAll>
+        <failedTotalHigh></failedTotalHigh>
+        <failedTotalNormal></failedTotalNormal>
+        <failedTotalLow></failedTotalLow>
+      </thresholds>
+      <shouldDetectModules>false</shouldDetectModules>
+      <dontComputeNew>true</dontComputeNew>
+      <doNotResolveRelativePaths>true</doNotResolveRelativePaths>
+      <isCheckStyleDeactivated>true</isCheckStyleDeactivated>
+      <isDryDeactivated>true</isDryDeactivated>
+      <isFindBugsDeactivated>true</isFindBugsDeactivated>
+      <isPmdDeactivated>true</isPmdDeactivated>
+      <isOpenTasksDeactivated>true</isOpenTasksDeactivated>
+      <isWarningsDeactivated>true</isWarningsDeactivated>
+    </hudson.plugins.analysis.collector.AnalysisPublisher>
+    <hudson.tasks.Mailer plugin="mailer@1.5">
+      <recipients>sahendrickson@gmail.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+  <executionStrategy class="hudson.matrix.DefaultMatrixExecutionStrategyImpl">
+    <runSequentially>false</runSequentially>
+  </executionStrategy>
+</matrix-project>
