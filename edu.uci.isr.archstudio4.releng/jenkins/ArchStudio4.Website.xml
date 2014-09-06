@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<matrix-project plugin="matrix-project@1.2">
+<matrix-project plugin="matrix-project@1.3">
   <actions/>
   <description>Extracts ArchStudio&apos;s website</description>
   <keepDependencies>false</keepDependencies>
   <properties/>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.1">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.2.5">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -20,7 +20,7 @@
     <submoduleCfg class="list"/>
     <extensions>
       <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
-        <relativeTargetDir>${git_clone_dir}/ArchStudio4</relativeTargetDir>
+        <relativeTargetDir>${WORKSPACE}/git/ArchStudio4</relativeTargetDir>
       </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
     </extensions>
   </scm>
@@ -46,20 +46,20 @@ for retries in {5..0}; do
       /home/isr/public_html/projects/xarchuci/ext \
       /home/isr/public_html/projects/xarchuci/core || continue
   rsync -rv --delete-after --delay-updates \
-      &quot;${git_clone_dir}/ArchStudio4/edu.uci.isr.archstudio4.doc/www/&quot; \
+      &quot;${WORKSPACE}/git/ArchStudio4/edu.uci.isr.archstudio4.doc/www/&quot; \
       isr@openlab.ics.uci.edu:/home/isr/public_html/projects/archstudio-4/www/ || continue
   rsync -rv --delete-after --delay-updates \
-      &quot;${git_clone_dir}/ArchStudio4/edu.uci.isr.archstudio4.doc/www/xarchuci/ext/&quot; \
+      &quot;${WORKSPACE}/git/ArchStudio4/edu.uci.isr.archstudio4.doc/www/xarchuci/ext/&quot; \
       isr@openlab.ics.uci.edu:/home/isr/public_html/projects/xarchuci/ext/ || continue
   rsync -rv --delete-after --delay-updates \
-      &quot;${git_clone_dir}/ArchStudio4/edu.uci.isr.archstudio4.doc/www/xarchuci/core/&quot; \
+      &quot;${WORKSPACE}/git/ArchStudio4/edu.uci.isr.archstudio4.doc/www/xarchuci/core/&quot; \
       isr@openlab.ics.uci.edu:/home/isr/public_html/projects/xarchuci/core/ || continue
   break
 done</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.8">
+    <hudson.tasks.Mailer plugin="mailer@1.11">
       <recipients>sahendrickson@gmail.com</recipients>
       <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
