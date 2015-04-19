@@ -8,7 +8,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/isr-uci-edu/ArchStudio4.git</url>
+        <url>git@data.scottalton.com:projects/ArchStudio4.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -76,19 +76,6 @@ build-update-site</targets>
       <antName>ant</antName>
       <buildFile>${WORKSPACE}/git/ArchStudio4/edu.uci.isr.archstudio4.releng/build.xml</buildFile>
     </hudson.tasks.Ant>
-    <hudson.tasks.Shell>
-      <command>#!/bin/bash -ex
-[[ &quot;${JOB_NAME}&quot; != *jdk=1.6* ]] &amp;&amp; exit 0
-[[ &quot;${JOB_NAME}&quot; != *eclipse_version=4.3* ]] &amp;&amp; exit 0
-for retries in {5..0}; do
-  [ $retries -eq 0 ] &amp;&amp; exit 1
-  ssh isr@openlab.ics.uci.edu mkdir -p /home/isr/public_html/projects/archstudio-4/${JOB_NAME} || continue
-  rsync -rv --delete-after --delay-updates \
-      &quot;${WORKSPACE}/edu.uci.isr.archstudio4.updatesite.feature/&quot; \
-      isr@openlab.ics.uci.edu:/home/isr/public_html/projects/archstudio-4/${JOB_NAME} || continue
-  break
-done</command>
-    </hudson.tasks.Shell>
   </builders>
   <publishers>
     <hudson.plugins.analysis.collector.AnalysisPublisher plugin="analysis-collector@1.42">

@@ -772,14 +772,6 @@ any resulting litigation.
    </license>
 
    <includes
-         id="org.eclipse.platform"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.sdk"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.jet"
          version="0.0.0"/>
 
@@ -794,7 +786,9 @@ any resulting litigation.
       <import plugin="org.eclipse.pde.core"/>
       <import plugin="org.eclipse.ui.console"/>
       <import plugin="org.eclipse.core.filesystem"/>
+      <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.core.runtime.compatibility"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jface.text"/>
       <import plugin="org.eclipse.jface.databinding"/>
@@ -802,7 +796,7 @@ any resulting litigation.
       <import plugin="org.eclipse.ui.forms"/>
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.ui.workbench.texteditor"/>
-      <import plugin="org.junit4"/>
+      <import plugin="org.junit"/>
       <import plugin="org.eclipse.equinox.registry"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.emf.codegen"/>
@@ -812,7 +806,6 @@ any resulting litigation.
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf"/>
       <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.swt"/>
    </requires>
 
    <plugin

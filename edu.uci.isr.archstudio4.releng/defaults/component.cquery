@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-    <cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="component.rmap" properties="buckminster.properties">
+<?xml version="1.0" encoding="UTF-8"?><cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="component.rmap" properties="buckminster.properties">
     <cq:rootRequest name="${buckminster.component}" componentType="eclipse.feature"/>
+    <cq:property key="buckminster.component" value="edu.uci.isr.archstudio4.updatesite.build.feature"/>
+    <cq:property key="eclipse.version" value="4.5"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
-    <cq:advisorNode namePattern=".*" sourceLevel="DESIRE"/>
+    <cq:advisorNode namePattern=".*linux\.ppc64le.*" filter="(eclipse.version~=4.5)" componentType="osgi.bundle" skipComponent="true">
+        <cq:documentation xmlns="http://www.w3.org/1999/xhtml">This is a workaround for Eclipse 4.5, which does not have 
+target.arch=ppc64le and target.os=linux in its repositories,  but
+requests it as part of the resolution process.</cq:documentation>
+    </cq:advisorNode>
+    <cq:advisorNode namePattern=".*" sourceLevel="DESIRE" useMaterialization="false" useTargetPlatform="false"/>
 </cq:componentQuery>
